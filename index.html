@@ -1205,11 +1205,10 @@ function showPropertyBuyModal() {
         }
     }
 
-    let html = "<h2>🛒 BUY A PROPERTY</h2>";
+    let html = "";
     if (availableProperties.length === 0) {
-        html += "<p style='color: #aaa;'>No properties for sale...</p>";        
+        html += "<p style='color: #aaa;'>No properties for sale...</p>";
     } else {
-        html += "<div style='max-height: 400px; overflow-y: auto;'>";
         for (let prop of availableProperties) {
             html += `<div class="propertyItem" style="padding: 10px; margin: 5px 0; background: #1a1a1a; border-radius: 8px;">
                 <strong>${prop.name}</strong> (from ${prop.seller})<br>
@@ -1217,10 +1216,9 @@ function showPropertyBuyModal() {
                 <button onclick="buyPropertyFromPlayer('${prop.seller}', '${prop.id}')" style="background: #00ff88; color: #000; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin-top: 5px;">BUY</button>
             </div>`;
         }
-        html += "</div>";
     }
-    document.getElementById("propertyListModal").innerHTML = html;
-    document.getElementById("propertyListModal").classList.add("active");       
+    document.getElementById("propertiesMarketList").innerHTML = html;
+    document.getElementById("propertyBuyModal").classList.add("active");       
 }
 
 function buyPropertyFromPlayer(sellerUsername, propertyId) {
@@ -1258,7 +1256,7 @@ function buyPropertyFromPlayer(sellerUsername, propertyId) {
         savePlayerData();
         playSound('buy');
         alert("✅ Property purchased from Property Market!");
-        closeModal("propertyListModal");
+        closeModal("propertyBuyModal");
         updateGameUI();
         return;
     }
@@ -1294,7 +1292,7 @@ function buyPropertyFromPlayer(sellerUsername, propertyId) {
     saveAllPlayers(players);
     playSound('buy');
     alert("✅ Property purchased from " + sellerUsername + "!");
-    closeModal("propertyListModal");
+    closeModal("propertyBuyModal");
     updateGameUI();
 }
 
@@ -1432,11 +1430,6 @@ function rejectTrade(tradeId) {
 
 function showPropertyMarketModal() {
     document.getElementById("propertyMarketModal").classList.add("active");     
-}
-
-function showPropertyBuyModal() {
-    document.getElementById("propertyBuyModal").classList.add("active");        
-    updatePropertyMarket();
 }
 
 function listProperty() {
