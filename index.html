@@ -1184,11 +1184,22 @@ function showPropertyBuyModal() {
     let players = getAllPlayers();
     let availableProperties = [];
 
+    // Add starter properties that are always available
+    const starterProperties = [
+        {id: "starter_1", name: "ðŸ  Starter House", price: 10000, monthlyIncome: 200, type: "house", seller: "ðŸª Property Market", forSale: true},
+        {id: "starter_2", name: "ðŸ¢ Starter Apartment", price: 15000, monthlyIncome: 300, type: "apartment", seller: "ðŸª Property Market", forSale: true},
+        {id: "starter_3", name: "ðŸ›ï¸ Starter Office", price: 25000, monthlyIncome: 500, type: "office", seller: "ðŸª Property Market", forSale: true},
+        {id: "starter_4", name: "ðŸª Starter Shop", price: 20000, monthlyIncome: 400, type: "mall", seller: "ðŸª Property Market", forSale: true},
+        {id: "starter_5", name: "ðŸŒ³ Starter Land", price: 8000, monthlyIncome: 150, type: "land", seller: "ðŸª Property Market", forSale: true}
+    ];
+
+    availableProperties = availableProperties.concat(starterProperties);
+
     for (let player of players) {
         if (!player.properties) continue;
         for (let prop of player.properties) {
-            if (prop.forSale && player.username !== gameState.username) {       
-                availableProperties.push({...prop, seller: player.username});   
+            if (prop.forSale && player.username !== gameState.username) {
+                availableProperties.push({...prop, seller: player.username});
             }
         }
     }
@@ -1201,8 +1212,8 @@ function showPropertyBuyModal() {
         for (let prop of availableProperties) {
             html += `<div class="propertyItem" style="padding: 10px; margin: 5px 0; background: #1a1a1a; border-radius: 8px;">
                 <strong>${prop.name}</strong> (from ${prop.seller})<br>
-                ðŸ’° â‚¹${prop.salePrice} | ðŸ“ˆ â‚¹${prop.monthlyIncome}/month<br>
-                <button onclick="buyPropertyFromPlayer('${prop.seller}', ${prop.id})" style="background: #00ff88; color: #000; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin-top: 5px;">BUY</button>
+                ðŸ’° â‚¹${prop.price} | ðŸ“ˆ â‚¹${prop.monthlyIncome}/month<br>
+                <button onclick="buyPropertyFromPlayer('${prop.seller}', '${prop.id}')" style="background: #00ff88; color: #000; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin-top: 5px;">BUY</button>
             </div>`;
         }
         html += "</div>";
@@ -1212,6 +1223,46 @@ function showPropertyBuyModal() {
 }
 
 function buyPropertyFromPlayer(sellerUsername, propertyId) {
+    // Handle starter properties (from Property Market)
+    if (sellerUsername === "ðŸª Property Market") {
+        const starterProperties = [
+            {id: "starter_1", name: "ðŸ  Starter House", price: 10000, monthlyIncome: 200, type: "house"},
+            {id: "starter_2", name: "ðŸ¢ Starter Apartment", price: 15000, monthlyIncome: 300, type: "apartment"},
+            {id: "starter_3", name: "ðŸ›ï¸ Starter Office", price: 25000, monthlyIncome: 500, type: "office"},
+            {id: "starter_4", name: "ðŸª Starter Shop", price: 20000, monthlyIncome: 400, type: "mall"},
+            {id: "starter_5", name: "ðŸŒ³ Starter Land", price: 8000, monthlyIncome: 150, type: "land"}
+        ];
+
+        let prop = starterProperties.find(p => p.id === propertyId);
+        if (!prop) {
+            alert("âŒ Property not found!");
+            return;
+        }
+
+        if (gameState.money < prop.price) {
+            alert("âŒ NOT ENOUGH MONEY!");
+            return;
+        }
+
+        gameState.money -= prop.price;
+        if (!gameState.properties) gameState.properties = [];
+        gameState.properties.push({
+            ...prop,
+            id: Date.now(),
+            owner: currentUser,
+            forSale: false,
+            createdAt: new Date().toLocaleDateString()
+        });
+
+        savePlayerData();
+        playSound('buy');
+        alert("âœ… Property purchased from Property Market!");
+        closeModal("propertyListModal");
+        updateGameUI();
+        return;
+    }
+
+    // Handle player-sold properties
     let players = getAllPlayers();
     let seller = players.find(p => p.username === sellerUsername);
     if (!seller) {
@@ -1235,8 +1286,8 @@ function buyPropertyFromPlayer(sellerUsername, propertyId) {
 
     prop.forSale = false;
     if (!gameState.properties) gameState.properties = [];
-    gameState.properties.push({...prop, previousSeller: sellerUsername});       
-    seller.properties = seller.properties.filter(p => p.id !== propertyId);     
+    gameState.properties.push({...prop, previousSeller: sellerUsername});
+    seller.properties = seller.properties.filter(p => p.id !== propertyId);
 
     savePlayerData();
     saveAllPlayers(players);
