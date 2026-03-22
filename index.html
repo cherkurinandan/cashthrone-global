@@ -1,0 +1,1657 @@
+<html>
+<head>
+<title>💰 CASH THRONE GLOBAL - Trade. Compete. Dominate 🌍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+@keyframes glow {
+    0%, 100% { text-shadow: 0 0 10px #00ff88, 0 0 20px #00ff88; }
+    50% { text-shadow: 0 0 20px #00ff88, 0 0 30px #00ff88; }
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+h1 {
+    color: #00ff88;
+    font-size: 2em;
+    text-shadow: 0 0 20px #00ff88;
+    margin: 15px 0;
+    text-align: center;
+    animation: glow 2s infinite;
+    letter-spacing: 2px;
+}
+
+.screen {
+    display: none;
+    animation: fadeIn 0.3s;
+}
+
+.screen.active {
+    display: block;
+}
+
+.auth-screen {
+    max-width: 500px;
+    margin: 50px auto;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 150, 200, 0.1) 100%);
+    border: 3px solid #00ff88;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+}
+
+.auth-title {
+    color: #00ff88;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #00ff88;
+    border-radius: 8px;
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: #00ff88;
+    color: #000;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00ff88;
+}
+
+.btn-secondary {
+    background: #0099cc;
+    color: white;
+}
+
+.btn-secondary:hover {
+    transform: scale(1.05);
+}
+
+.error {
+    background: #ff6b6b;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.success {
+    background: #00ff88;
+    color: #000;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.header {
+    background: rgba(0, 255, 136, 0.1);
+    border: 2px solid #00ff88;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 10px auto;
+    text-align: center;
+    max-width: 1400px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+}
+
+.stat {
+    background: rgba(0, 255, 136, 0.15);
+    padding: 12px;
+    border-radius: 12px;
+    border: 2px solid #00ff88;
+}
+
+.stat-label {
+    font-size: 0.8em;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.stat-value {
+    font-size: 1.4em;
+    color: #00ff88;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.tabs {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    margin: 12px 0;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tab-button {
+    padding: 10px 15px;
+    border: 2px solid #00ff88;
+    border-radius: 12px;
+    background: rgba(0, 255, 136, 0.1);
+    color: #00ff88;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tab-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.8);
+}
+
+.tab-button.active {
+    background: #00ff88;
+    color: #000;
+    box-shadow: 0 0 20px #00ff88;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 15px auto;
+    max-width: 1400px;
+    padding: 0 10px;
+}
+
+.card {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 150, 200, 0.1) 100%);
+    border: 2px solid #00ff88;
+    border-radius: 15px;
+    padding: 18px;
+    box-shadow: 0 8px 25px rgba(0, 255, 136, 0.2);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 255, 136, 0.6);
+    border-color: #ffd700;
+}
+
+.card-title {
+    font-size: 1.3em;
+    color: #00ff88;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.card-value {
+    font-size: 1.5em;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border: 3px solid #00ff88;
+    border-radius: 20px;
+    padding: 25px;
+    max-width: 500px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+}
+
+.modal-title {
+    font-size: 1.6em;
+    color: #00ff88;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.trade-card {
+    background: rgba(0, 150, 255, 0.15);
+    border-left: 5px solid #0099cc;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+
+.friend-badge {
+    display: inline-block;
+    background: #ffd700;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 2px;
+}
+
+.message-box {
+    background: rgba(0, 255, 136, 0.1);
+    border-left: 3px solid #00ff88;
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.message {
+    padding: 8px;
+    margin: 5px 0;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    font-size: 0.95em;
+}
+
+.leaderboard-row {
+    display: grid;
+    grid-template-columns: 40px 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 12px;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid #00ff88;
+    border-radius: 8px;
+    margin: 8px 0;
+    align-items: center;
+}
+
+.rank {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #ffd700;
+}
+
+.player-name {
+    color: #00ff88;
+    font-weight: bold;
+}
+
+.info-box {
+    background: rgba(0, 255, 136, 0.15);
+    border: 2px solid #00ff88;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px auto;
+    max-width: 900px;
+    font-size: 0.95em;
+}
+
+.btn-logout {
+    background: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    float: right;
+}
+
+.sell {
+    background: #ff6b6b;
+    color: white;
+}
+
+.country-flag {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.property-list {
+    background: rgba(0, 150, 255, 0.15);
+    border-left: 4px solid #0099cc;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN/REGISTRATION SCREEN -->
+<div id="authScreen" class="screen active auth-screen">
+    <div class="auth-title">💰 CASH THRONE GLOBAL 🌍</div>
+    <p style="text-align: center; margin-bottom: 20px; color: #ffd700;">Become a Global Billionaire!</p>
+    
+    <div id="loginForm">
+        <div class="auth-title" style="font-size: 1.3em; margin-bottom: 15px;">LOGIN</div>
+        <input type="text" id="loginUsername" placeholder="Username" maxlength="15">
+        <input type="password" id="loginPassword" placeholder="Password">
+        <button class="btn-primary" onclick="login()">🔓 LOGIN</button>
+        <button class="btn-secondary" onclick="toggleForm()">📝 CREATE ACCOUNT</button>
+        <div id="loginError"></div>
+    </div>
+
+    <div id="registerForm" style="display: none;">
+        <div class="auth-title" style="font-size: 1.3em; margin-bottom: 15px;">CREATE ACCOUNT</div>
+        <input type="text" id="regUsername" placeholder="Username" maxlength="15">
+        <input type="password" id="regPassword" placeholder="Password" maxlength="20">
+        <input type="password" id="regPassword2" placeholder="Confirm Password" maxlength="20">
+        <select id="regCountry">
+            <option value="">🌍 Select Country</option>
+            <option value="USA">🇺🇸 USA (USD)</option>
+            <option value="UK">🇬🇧 UK (GBP)</option>
+            <option value="India">🇮🇳 India (INR)</option>
+            <option value="Japan">🇯🇵 Japan (JPY)</option>
+            <option value="Germany">🇩🇪 Germany (EUR)</option>
+            <option value="Brazil">🇧🇷 Brazil (BRL)</option>
+            <option value="China">🇨🇳 China (CNY)</option>
+            <option value="Canada">🇨🇦 Canada (CAD)</option>
+        </select>
+        <button class="btn-primary" onclick="register()">✨ CREATE ACCOUNT</button>
+        <button class="btn-secondary" onclick="toggleForm()">🔙 BACK TO LOGIN</button>
+        <div id="registerError"></div>
+    </div>
+</div>
+
+<!-- MAIN GAME SCREEN -->
+<div id="gameScreen" class="screen">
+    <h1>💰 CASH THRONE GLOBAL 👑</h1>
+    <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 15px; flex-wrap: wrap;">
+        <button class="btn-primary" onclick="exportGameData()" style="flex: 1; min-width: 150px; font-size: 0.9em; padding: 10px;">💾 EXPORT</button>
+        <button class="btn-primary" onclick="importGameData()" style="flex: 1; min-width: 150px; font-size: 0.9em; padding: 10px;">📥 IMPORT</button>
+        <button class="btn-logout" onclick="logout()">LOGOUT</button>
+    </div>
+    
+    <div style="clear: both; margin-top: 20px;"></div>
+
+    <div class="header">
+        <div style="text-align: center; margin-bottom: 15px;">
+            <span style="font-size: 1.2em; color: #00ff88; font-weight: bold;" id="profileInfo"></span>
+        </div>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-label">💵 Wallet</div>
+                <div class="stat-value" id="walletValue">1000</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">👑 Net Worth</div>
+                <div class="stat-value" id="netWorth">1000</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">🤝 Friends</div>
+                <div class="stat-value" id="friendCount">0</div>
+            </div>
+            <div class="stat">
+                <div class="stat-label">🏪 Properties</div>
+                <div class="stat-value" id="propertyCount">0</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="tabs">
+        <button class="tab-button active" onclick="switchTab('market')">🌍 MARKET</button>
+        <button class="tab-button" onclick="switchTab('trade')">🤝 TRADE</button>
+        <button class="tab-button" onclick="switchTab('companies')">🏢 COMPANIES</button>
+        <button class="tab-button" onclick="switchTab('properties')">🏠 PROPERTIES</button>
+        <button class="tab-button" onclick="switchTab('friends')">💬 FRIENDS</button>
+        <button class="tab-button" onclick="switchTab('leaderboard')">🏆 LEADERBOARD</button>
+    </div>
+
+    <!-- MARKET TAB -->
+    <div id="market" class="tab-content active">
+        <div class="info-box">📈 Buy & Sell Stocks! Prices change every 2 seconds! 📊</div>
+        <div id="stocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; max-width: 1400px; margin: 15px auto; padding: 0 10px;">
+        </div>
+        <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #00ff88;">
+            <h3 style="color: #ffd700; margin-bottom: 15px;">💱 CURRENCY EXCHANGE RATES</h3>
+            <div id="currency-rates" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; max-width: 900px; margin: 0 auto;">
+            </div>
+        </div>
+    </div>
+
+    <!-- TRADE TAB -->
+    <div id="trade" class="tab-content">
+        <div class="info-box">🤝 Trade with other players! Browse offers and make trades!</div>
+        <button class="btn-primary" onclick="showCreateTradeModal()" style="max-width: 300px; margin: 10px auto; display: block;">✨ CREATE TRADE OFFER</button>
+        <div id="trades-list" style="max-width: 800px; margin: 15px auto;">
+        </div>
+    </div>
+
+    <!-- COMPANIES TAB -->
+    <div id="companies" class="tab-content">
+        <div class="info-box">🏢 Start your own business! Each company generates passive income! 💰</div>
+        <button class="btn-primary" onclick="showCreateCompanyModal()" style="max-width: 300px; margin: 10px auto; display: block;">🆕 START COMPANY</button>
+        <h3 style="color: #00ff88; margin: 30px 0 15px; text-align: center;">🏢 YOUR COMPANIES</h3>
+        <div id="my-companies" style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 10px;">
+        </div>
+    </div>
+
+    <!-- PROPERTIES TAB -->
+    <div id="properties" class="tab-content">
+        <div class="info-box">🏠 Real Estate Investment - Buy properties to earn daily income! 💸</div>
+        <button class="btn-primary" onclick="showPropertyListModal()" style="max-width: 300px; margin: 10px auto; display: block;">📢 LIST YOUR PROPERTY</button>
+        <button class="btn-primary" onclick="showPropertyBuyModal()" style="max-width: 300px; margin: 10px auto; display: block;">🛒 BUY A PROPERTY</button>
+        <h3 style="color: #00ff88; margin: 30px 0 15px; text-align: center;">🏠 YOUR PROPERTIES</h3>
+        <div id="my-properties" style="max-width: 1000px; margin: 0 auto;">
+        </div>
+    </div>
+
+    <!-- FRIENDS TAB -->
+    <div id="friends" class="tab-content">
+        <div class="info-box">💬 Add friends and chat! 💭</div>
+        <button class="btn-primary" onclick="showAddFriendModal()" style="max-width: 300px; margin: 10px auto; display: block;">➕ ADD FRIEND</button>
+        <div id="friends-list" style="max-width: 900px; margin: 15px auto;">
+        </div>
+    </div>
+
+    <!-- LEADERBOARD TAB -->
+    <div id="leaderboard" class="tab-content">
+        <div class="info-box">🏆 Global rankings! See who's winning! 💎</div>
+        <div id="leaderboard-list" style="max-width: 600px; margin: 15px auto;">
+        </div>
+    </div>
+</div>
+
+<!-- MODALS -->
+<div id="createTradeModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('createTradeModal')">✕</button>
+        <div class="modal-title">✨ CREATE TRADE OFFER</div>
+        <input type="text" id="tradeWithUsername" placeholder="Trade with player (username)">
+        <input type="number" id="tradeAmount" placeholder="Amount to trade" min="1">
+        <input type="text" id="tradeItem" placeholder="Item/Good (e.g., Bitcoin, Gold, Stocks)">
+        <p style="color: #ffd700; margin: 10px 0;">💰 You will get: <span id="tradeGetAmount">0</span> (after fees)</p>
+        <button class="btn-primary" onclick="createTrade()" style="margin-top: 10px;">✅ SEND OFFER</button>
+    </div>
+</div>
+
+<div id="addFriendModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('addFriendModal')">✕</button>
+        <div class="modal-title">➕ ADD FRIEND</div>
+        <input type="text" id="friendUsername" placeholder="Friend's username">
+        <button class="btn-primary" onclick="addFriend()" style="margin-top: 10px;">🤝 SEND REQUEST</button>
+        <div id="friendsList" style="margin-top: 15px;">
+            <p style="color: #aaa;">Online players:</p>
+            <div id="onlinePlayersList"></div>
+        </div>
+    </div>
+</div>
+
+<div id="createCompanyModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('createCompanyModal')">✕</button>
+        <div class="modal-title">🆕 START YOUR COMPANY</div>
+        <input type="text" id="companyName" placeholder="Company name" maxlength="20">
+        <select id="companyTypeSelect" onchange="updateCompanyTypeInfo()">
+            <option value="">-- Select Business Type --</option>
+            <option value="tech">💻 Tech Startup (₹5000)</option>
+            <option value="retail">🛍️ Retail Store (₹3000)</option>
+            <option value="food">🍔 Food Business (₹2000)</option>
+            <option value="pharma">💊 Pharma Co (₹8000)</option>
+            <option value="entertainment">🎬 Entertainment (₹4000)</option>
+        </select>
+        <div style="background: rgba(0,150,200,0.2); padding: 12px; border-radius: 8px; margin: 10px 0; font-size: 0.95em;">
+            <p id="companyTypeInfo" style="color: #ffd700;">Select a business type to see details</p>
+        </div>
+        <button class="btn-primary" onclick="createCompany()" style="margin-top: 10px;">✨ CREATE NOW</button>
+    </div>
+</div>
+
+<div id="propertyListModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('propertyListModal')">✕</button>
+        <div class="modal-title">📢 LIST YOUR PROPERTY</div>
+        <input type="text" id="propertyName" placeholder="Property name (e.g., Downtown Office)">
+        <input type="number" id="propertyPrice" placeholder="Asking price" min="100">
+        <input type="number" id="propertyIncome" placeholder="Daily rental income" min="0">
+        <select id="propertyType">
+            <option value="house">🏠 House</option>
+            <option value="apartment">🏢 Apartment</option>
+            <option value="office">🏛️ Office</option>
+            <option value="mall">🏪 Mall</option>
+            <option value="land">🌳 Land</option>
+            <option value="factory">🏭 Factory</option>
+        </select>
+        <button class="btn-primary" onclick="listProperty()" style="margin-top: 10px;">📢 LIST NOW</button>
+    </div>
+</div>
+
+<div id="propertyBuyModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('propertyBuyModal')">✕</button>
+        <div class="modal-title">🛒 BROWSE PROPERTIES</div>
+        <div id="propertiesMarketList" style="max-height: 400px; overflow-y: auto;">
+        </div>
+    </div>
+</div>
+
+<div id="chatModal" class="modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('chatModal')">✕</button>
+        <div class="modal-title" id="chatTitle">💬 Chat</div>
+        <div class="message-box" id="chatMessages"></div>
+        <div style="margin-top: 10px;">
+            <input type="text" id="chatInput" placeholder="Type message..." onkeypress="if(event.key==='Enter') sendChatMessage()">
+            <button class="btn-primary" onclick="sendChatMessage()" style="margin-top: 5px;">📤 SEND</button>
+        </div>
+    </div>
+</div>
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js"></script>
+
+<script>
+// Initialize Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyBBBMKWKg_E0oL_hX0D_1vZqZ5Z5Z5Z5Z5",
+    authDomain: "cashthrone-global.firebaseapp.com",
+    databaseURL: "https://cashthrone-global-default-rtdb.firebaseio.com",
+    projectId: "cashthrone-global",
+    storageBucket: "cashthrone-global.appspot.com",
+    messagingSenderId: "123456789",
+    appId: "1:123456789:web:abcdef1234567890"
+};
+
+let db, auth;
+try {
+    firebase.initializeApp(firebaseConfig);
+    db = firebase.database();
+    auth = firebase.auth();
+} catch(e) {
+    console.log("Firebase not available, using local storage fallback");
+}
+
+const currencies = {
+    "USA": {code: "USD", symbol: "$", rate: 1},
+    "UK": {code: "GBP", symbol: "£", rate: 0.73},
+    "India": {code: "INR", symbol: "₹", rate: 82},
+    "Japan": {code: "JPY", symbol: "¥", rate: 135},
+    "Germany": {code: "EUR", symbol: "€", rate: 0.92},
+    "Brazil": {code: "BRL", symbol: "R$", rate: 5.1},
+    "China": {code: "CNY", symbol: "¥", rate: 6.9},
+    "Canada": {code: "CAD", symbol: "$", rate: 1.35}
+};
+
+const stocks = {
+    "🚀 RocketX": {emoji: "🚀", price: 150, owned: 0, history: [150]},
+    "📱 TechHub": {emoji: "📱", price: 140, owned: 0, history: [140]},
+    "🏥 HealthCo": {emoji: "🏥", price: 180, owned: 0, history: [180]},
+    "⚡ PowerGrid": {emoji: "⚡", price: 110, owned: 0, history: [110]},
+    "🎬 StreamFlix": {emoji: "🎬", price: 125, owned: 0, history: [125]},
+    "🛍️ MallPlus": {emoji: "🛍️", price: 95, owned: 0, history: [95]},
+    "✈️ SkyTravel": {emoji: "✈️", price: 160, owned: 0, history: [160]},
+    "🏦 BankCorp": {emoji: "🏦", price: 200, owned: 0, history: [200]},
+    "🚗 AutoWorks": {emoji: "🚗", price: 135, owned: 0, history: [135]},
+    "🍔 FoodChain": {emoji: "🍔", price: 90, owned: 0, history: [90]},
+    "🎮 GameStudio": {emoji: "🎮", price: 165, owned: 0, history: [165]},
+    "☕ CoffeeCorp": {emoji: "☕", price: 85, owned: 0, history: [85]}
+};
+
+let currentUser = null;
+let gameState = {};
+
+const companyTypes = {
+    "tech": {name: "💻 TECH STARTUP", cost: 5000, monthlyIncome: 800},
+    "retail": {name: "🛍️ RETAIL STORE", cost: 3000, monthlyIncome: 500},
+    "food": {name: "🍔 FOOD BUSINESS", cost: 2000, monthlyIncome: 400},
+    "pharma": {name: "💊 PHARMA CO", cost: 8000, monthlyIncome: 1500},
+    "entertainment": {name: "🎬 ENTERTAINMENT", cost: 4000, monthlyIncome: 600}
+};
+
+function toggleForm() {
+    document.getElementById("loginForm").style.display = document.getElementById("loginForm").style.display === "none" ? "block" : "none";
+    document.getElementById("registerForm").style.display = document.getElementById("registerForm").style.display === "none" ? "block" : "none";
+}
+
+function register() {
+    let username = document.getElementById("regUsername").value.trim();
+    let password = document.getElementById("regPassword").value;
+    let password2 = document.getElementById("regPassword2").value;
+    let country = document.getElementById("regCountry").value;
+    
+    if (!username || !password || !country) {
+        document.getElementById("registerError").innerHTML = '<div class="error">❌ Please fill all fields!</div>';
+        return;
+    }
+    
+    if (password !== password2) {
+        document.getElementById("registerError").innerHTML = '<div class="error">❌ Passwords don\'t match!</div>';
+        return;
+    }
+    
+    let users = JSON.parse(localStorage.getItem("cashThrone_users")) || {};
+    if (users[username]) {
+        document.getElementById("registerError").innerHTML = '<div class="error">❌ Username already taken!</div>';
+        return;
+    }
+    
+    users[username] = {password, country};
+    localStorage.setItem("cashThrone_users", JSON.stringify(users));
+    
+    // Sync to Firebase if available
+    if (db) {
+        firebase.database().ref("users/" + username).set({password, country}).catch(e => console.log("Offline mode"));
+    }
+    
+    document.getElementById("registerError").innerHTML = '<div class="success">✅ Account created! Login now!</div>';
+    setTimeout(() => toggleForm(), 1500);
+}
+
+function login() {
+    let username = document.getElementById("loginUsername").value.trim();
+    let password = document.getElementById("loginPassword").value;
+    
+    if (!username || !password) {
+        document.getElementById("loginError").innerHTML = '<div class="error">❌ Please enter username and password!</div>';
+        return;
+    }
+    
+    // Try Firebase first, fallback to local
+    if (db) {
+        firebase.database().ref("users/" + username).once("value").then(snap => {
+            if (snap.exists()) {
+                let userData = snap.val();
+                if (userData.password === password) {
+                    completeLogin(username, userData);
+                } else {
+                    document.getElementById("loginError").innerHTML = '<div class="error">❌ Invalid login!</div>';
+                }
+            } else {
+                tryLocalLogin(username, password);
+            }
+        }).catch(e => {
+            tryLocalLogin(username, password);
+        });
+    } else {
+        tryLocalLogin(username, password);
+    }
+}
+
+function tryLocalLogin(username, password) {
+    let users = JSON.parse(localStorage.getItem("cashThrone_users")) || {};
+    if (!users[username] || users[username].password !== password) {
+        document.getElementById("loginError").innerHTML = '<div class="error">❌ Invalid login!</div>';
+        return;
+    }
+    completeLogin(username, users[username]);
+}
+
+function completeLogin(username, userData) {
+    currentUser = username;
+    
+    // Load player data from cloud or local
+    if (db) {
+        firebase.database().ref("players/" + username).once("value").then(snap => {
+            if (snap.exists()) {
+                gameState = snap.val();
+            } else {
+                initializeNewPlayer(userData);
+            }
+            loadPlayerStocks(username, true);
+        }).catch(e => {
+            loadLocalPlayer(username, userData);
+        });
+    } else {
+        loadLocalPlayer(username, userData);
+    }
+}
+
+function loadLocalPlayer(username, userData) {
+    let playerData = JSON.parse(localStorage.getItem("cashThrone_players")) || {};
+    if (!playerData[username]) {
+        initializeNewPlayer(userData);
+    } else {
+        gameState = playerData[username];
+    }
+    loadPlayerStocks(username, false);
+}
+
+function initializeNewPlayer(userData) {
+    gameState = {
+        country: userData.country,
+        currency: currencies[userData.country].code,
+        money: 5000,
+        properties: [],
+        friends: [],
+        tradeOffers: [],
+        trades: [],
+        messages: {},
+        netWorth: 5000,
+        companies: [],
+        rank: 1
+    };
+}
+
+function loadPlayerStocks(username, isCloud) {
+    if (isCloud && db) {
+        firebase.database().ref("stocks/" + username).once("value").then(snap => {
+            if (snap.exists()) {
+                let stocksData = snap.val();
+                for (let name in stocks) {
+                    stocks[name].owned = stocksData[name] || 0;
+                }
+            } else {
+                initializeStocks();
+            }
+            finishLogin();
+        }).catch(e => loadLocalStocks(username));
+    } else {
+        loadLocalStocks(username);
+    }
+}
+
+function loadLocalStocks(username) {
+    let stocksData = JSON.parse(localStorage.getItem("cashThrone_stocks")) || {};
+    if (!stocksData[username]) {
+        initializeStocks();
+    } else {
+        for (let name in stocks) {
+            stocks[name].owned = stocksData[username][name] || 0;
+        }
+    }
+    finishLogin();
+}
+
+function initializeStocks() {
+    for (let name in stocks) {
+        stocks[name].owned = 0;
+    }
+}
+
+function finishLogin() {
+    document.getElementById("authScreen").classList.remove("active");
+    document.getElementById("gameScreen").classList.add("active");
+    updateGameUI();
+    // Auto-sync every 10 seconds
+    if (!window.syncInterval) {
+        window.syncInterval = setInterval(() => savePlayerData(), 10000);
+    }
+}
+
+function logout() {
+    savePlayerData();
+    currentUser = null;
+    gameState = {};
+    document.getElementById("gameScreen").classList.remove("active");
+    document.getElementById("authScreen").classList.add("active");
+    document.getElementById("loginUsername").value = "";
+    document.getElementById("loginPassword").value = "";
+    document.getElementById("loginError").innerHTML = "";
+}
+
+function exportGameData() {
+    if (!currentUser) {
+        alert("❌ Please login first!");
+        return;
+    }
+    
+    let exportData = {
+        username: currentUser,
+        gameState: gameState,
+        stocks: {}
+    };
+    
+    for (let name in stocks) {
+        exportData.stocks[name] = stocks[name].owned;
+    }
+    
+    let dataStr = JSON.stringify(exportData, null, 2);
+    let dataBlob = new Blob([dataStr], {type: "application/json"});
+    let url = URL.createObjectURL(dataBlob);
+    let link = document.createElement("a");
+    link.href = url;
+    link.download = currentUser + "_cashthrone_export.json";
+    link.click();
+    URL.revokeObjectURL(url);
+    
+    alert("✅ Game data exported! Download started.");
+}
+
+function importGameData() {
+    if (!currentUser) {
+        alert("❌ Please login first!");
+        return;
+    }
+    
+    let input = document.createElement("input");
+    input.type = "file";
+    input.accept = ".json";
+    input.onchange = e => {
+        let file = e.target.files[0];
+        let reader = new FileReader();
+        reader.onload = event => {
+            try {
+                let importData = JSON.parse(event.target.result);
+                if (importData.username !== currentUser) {
+                    alert("⚠️ This file is for user: " + importData.username);
+                    return;
+                }
+                
+                gameState = importData.gameState;
+                for (let name in importData.stocks) {
+                    if (stocks[name]) {
+                        stocks[name].owned = importData.stocks[name];
+                    }
+                }
+                
+                savePlayerData();
+                updateGameUI();
+                alert("✅ Game data imported successfully!");
+            } catch(err) {
+                alert("❌ Invalid file format!");
+            }
+        };
+        reader.readAsText(file);
+    };
+    input.click();
+}
+
+function savePlayerData() {
+    if (!currentUser) return;
+    
+    // Save locally
+    let playerData = JSON.parse(localStorage.getItem("cashThrone_players")) || {};
+    playerData[currentUser] = gameState;
+    localStorage.setItem("cashThrone_players", JSON.stringify(playerData));
+    
+    let stocksData = JSON.parse(localStorage.getItem("cashThrone_stocks")) || {};
+    stocksData[currentUser] = {};
+    for (let name in stocks) {
+        stocksData[currentUser][name] = stocks[name].owned;
+    }
+    localStorage.setItem("cashThrone_stocks", JSON.stringify(stocksData));
+    
+    // Sync to Firebase if available
+    if (db) {
+        firebase.database().ref("players/" + currentUser).set(gameState).catch(e => {
+            console.log("Firebase sync offline - using local storage");
+        });
+        
+        let stocksObj = {};
+        for (let name in stocks) {
+            stocksObj[name] = stocks[name].owned;
+        }
+        firebase.database().ref("stocks/" + currentUser).set(stocksObj).catch(e => {});
+    }
+}
+
+function switchTab(tab) {
+    document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
+    document.querySelectorAll(".tab-button").forEach(el => el.classList.remove("active"));
+    document.getElementById(tab).classList.add("active");
+    event.target.classList.add("active");
+
+    if (tab === "market") updateMarket();
+    if (tab === "trade") updateTrades();
+    if (tab === "properties") updateProperties();
+    if (tab === "friends") updateFriends();
+    if (tab === "leaderboard") updateLeaderboard();
+}
+
+function updateGameUI() {
+    let country = Object.keys(currencies).find(c => currencies[c].code === gameState.currency);
+    document.getElementById("profileInfo").textContent = `${currentUser} 🌍 ${country} | ${gameState.currency}`;
+    document.getElementById("walletValue").textContent = Math.floor(gameState.money);
+    document.getElementById("netWorth").textContent = Math.floor(getNetWorth());
+    document.getElementById("friendCount").textContent = gameState.friends.length;
+    document.getElementById("propertyCount").textContent = (gameState.properties ? gameState.properties.length : 0);
+    updateCompaniesUI();
+    updatePropertiesUI();
+    savePlayerData();
+}
+
+function updateCompaniesUI() {
+    if (!gameState.companies) gameState.companies = [];
+    let html = "";
+    if (gameState.companies.length === 0) {
+        html = "<p style='text-align: center; color: #aaa;'>No companies yet. Start one to earn passive income! 💼</p>";
+    } else {
+        for (let company of gameState.companies) {
+            html += `<div class="card" style="background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(0,255,136,0.1) 100%); border-color: #ffd700;">   
+                <div class="card-title">${company.name}</div>
+                <p style="color: #aaa; font-size: 0.9em;">Type: ${companyTypes[company.type].name}</p>
+                <p style="color: #ffd700; font-weight: bold;">📈 Value: ₹${Math.floor(company.value)}</p>
+                <p style="color: #00ff88; font-weight: bold;">💰 Monthly: +₹${company.monthlyIncome}</p>
+                <p style="color: #aaa; font-size: 0.85em;">Started: ${company.createdAt}</p>
+            </div>`;
+        }
+    }
+    if (document.getElementById("my-companies")) {
+        document.getElementById("my-companies").innerHTML = html;
+    }
+}
+
+function updatePropertiesUI() {
+    if (!gameState.properties) gameState.properties = [];
+    let html = "";
+    if (gameState.properties.length === 0) {
+        html = "<p style='text-align: center; color: #aaa;'>No properties yet. Buy one to start earning passive income! 🏠</p>";
+    } else {
+        for (let prop of gameState.properties) {
+            html += `<div class="property-list">
+                <p><strong>${prop.name}</strong> (${prop.type})</p>
+                <p style="color: #ffd700; font-weight: bold;">💰 Value: ₹${Math.floor(prop.price)}</p>
+                <p style="color: #00ff88; font-weight: bold;">📈 Daily Income: +₹${Math.floor(prop.income)}</p>
+                <p style="color: #aaa; font-size: 0.85em;">Owner: ${prop.owner}</p>
+                ${prop.forSale ? `<button class="sell" onclick="delistProperty(${prop.id})" style="width: 100%; margin-top: 8px; background: #ff6b6b; padding: 8px; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; color: white;">❌ DELIST</button>` : ""}
+            </div>`;
+        }
+    }
+    if (document.getElementById("my-properties")) {
+        document.getElementById("my-properties").innerHTML = html;
+    }
+}
+
+function getNetWorth() {
+    let worth = gameState.money;
+    // Add stock value
+    for (let name in stocks) {
+        worth += stocks[name].owned * stocks[name].price;
+    }
+    // Add property value
+    if (gameState.properties) {
+        for (let prop of gameState.properties) {
+            worth += prop.price;
+        }
+    }
+    // Add company value
+    if (gameState.companies) {
+        for (let company of gameState.companies) {
+            worth += company.value;
+        }
+    }
+    return worth;
+}
+
+function updateMarket() {
+    // Update stocks
+    let html = "";
+    for (let name in stocks) {
+        let s = stocks[name];
+        let change = s.price - s.history[s.history.length - 2 || s.history[0]]; 
+        let changePercent = ((change / s.history[s.history.length - 2 || s.history[0]]) * 100).toFixed(1);
+        let emoji = change >= 0 ? "📈" : "📉";
+        let changeColor = change >= 0 ? "#00ff88" : "#ff6b6b";
+
+        html += `<div class="card" style="border-color: ${changeColor};">       
+            <div class="card-title">${name}</div>
+            <div class="card-value" style="color: #ffd700;">₹${Math.floor(s.price)}</div>
+            <p style="color: ${changeColor}; font-weight: bold; margin: 8px 0;">
+${emoji} ${(change >= 0 ? '+' : '')}₹${Math.floor(change)} (${changePercent}%)</p>
+            <p style="color: #aaa; margin: 5px 0;">You own: ${s.owned}</p>      
+            <button class="btn-primary" onclick="buyStock('${name}')" style="width: 48%; display: inline-block; margin: 5px 1%; padding: 8px; font-size: 0.9em;">🛒 BUY</button>
+            <button class="sell" onclick="sellStock('${name}')" style="width: 48%; display: inline-block; margin: 5px 1%; padding: 8px; font-size: 0.9em; background: #ff6b6b;">💸 SELL</button>
+        </div>`;
+    }
+    document.getElementById("stocks-grid").innerHTML = html;
+
+    // Update currency rates
+    html = "";
+    for (let country in currencies) {
+        let curr = currencies[country];
+        html += `<div class="card">
+            <div class="card-title">${country}</div>
+            <div class="card-value">${curr.symbol}${curr.rate.toFixed(2)}</div> 
+            <p style="color: #aaa; font-size: 0.9em;">1 USD = ${curr.rate.toFixed(2)} ${curr.code}</p>
+        </div>`;
+    }
+    document.getElementById("currency-rates").innerHTML = html;
+}
+
+function buyStock(name) {
+    if (gameState.money >= stocks[name].price) {
+        gameState.money -= stocks[name].price;
+        stocks[name].owned++;
+        savePlayerData();
+        playSound('buy');
+        alert("✅ Bought 1 share of " + name + "!");
+        updateMarket();
+        updateGameUI();
+    } else {
+        alert("❌ NOT ENOUGH MONEY! Need ₹" + Math.floor(stocks[name].price));
+    }
+}
+
+function sellStock(name) {
+    if (stocks[name].owned > 0) {
+        gameState.money += stocks[name].price;
+        stocks[name].owned--;
+        savePlayerData();
+        playSound('sell');
+        alert("✅ Sold 1 share of " + name + "!");
+        updateMarket();
+        updateGameUI();
+    } else {
+        alert("❌ YOU DON'T OWN THIS STOCK!");
+    }
+}
+
+function playSound(type) {
+    try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();   
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        const freqs = {buy: 800, sell: 1200};
+        const dur = {buy: 0.1, sell: 0.15};
+        osc.frequency.value = freqs[type] || 600;
+        gain.gain.setValueAtTime(0.1, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + dur[type]);
+        osc.start(ctx.currentTime);
+        osc.stop(ctx.currentTime + dur[type]);
+    } catch(e) {}
+}
+
+function showCreateTradeModal() {
+    document.getElementById("createTradeModal").classList.add("active");        
+}
+
+function showCreateCompanyModal() {
+    document.getElementById("createCompanyModal").classList.add("active");      
+}
+
+function updateCompanyTypeInfo() {
+    let type = document.getElementById("companyTypeSelect").value;
+    if (type && companyTypes[type]) {
+        let info = companyTypes[type];
+        document.getElementById("companyTypeInfo").innerHTML = `<strong>${info.name}</strong><br>💰 Investment: ₹${info.cost}<br>📈 Monthly Income: ₹${info.monthlyIncome}`;
+    } else {
+        document.getElementById("companyTypeInfo").innerHTML = "Select a business type to see details";
+    }
+}
+
+function createCompany() {
+    let name = document.getElementById("companyName").value.trim();
+    let type = document.getElementById("companyTypeSelect").value;
+
+    if (!name || !type || !companyTypes[type]) {
+        alert("❌ Please fill all fields!");
+        return;
+    }
+
+    let cost = companyTypes[type].cost;
+    if (gameState.money < cost) {
+        alert("❌ NOT ENOUGH MONEY! Need ₹" + cost);
+        return;
+    }
+
+    if (!gameState.companies) gameState.companies = [];
+
+    gameState.money -= cost;
+    let company = {
+        id: Date.now(),
+        name: name,
+        type: type,
+        cost: cost,
+        monthlyIncome: companyTypes[type].monthlyIncome,
+        value: cost * 2,
+        shares: 100,
+        createdAt: new Date().toLocaleDateString()
+    };
+
+    gameState.companies.push(company);
+    savePlayerData();
+    playSound('buy');
+    alert("✅ " + name + " created! Monthly income: ₹" + company.monthlyIncome);
+    closeModal("createCompanyModal");
+    document.getElementById("companyName").value = "";
+    document.getElementById("companyTypeSelect").value = "";
+    updateGameUI();
+}
+
+function getAllPlayers() {
+    let playerData = JSON.parse(localStorage.getItem("cashThrone_players")) || {};
+    let players = [];
+    for (let username in playerData) {
+        players.push({username, ...playerData[username]});
+    }
+    return players;
+}
+
+function saveAllPlayers(players) {
+    let playerData = {};
+    for (let player of players) {
+        let username = player.username;
+        playerData[username] = player;
+
+        // Sync to Firebase
+        if (db) {
+            firebase.database().ref("players/" + username).set(player).catch(e => {});
+        }
+    }
+    localStorage.setItem("cashThrone_players", JSON.stringify(playerData));     
+}
+
+function showPropertyListModal() {
+    if (!gameState.properties || gameState.properties.length === 0) {
+        alert("❌ You have no properties yet! Buy one first.");
+        return;
+    }
+    let html = "<h2>📢 LIST YOUR PROPERTY</h2>";
+    html += "<p style='color: #aaa;'>Select a property to list for sale:</p>";  
+    html += "<div style='max-height: 300px; overflow-y: auto;'>";
+    for (let prop of gameState.properties) {
+        html += `<div class="propertyItem" style="padding: 10px; margin: 5px 0; background: #1a1a1a; border-radius: 8px; cursor: pointer;" onclick="listPropertyForSale(${prop.id})">
+            <strong>${prop.name}</strong> - ₹${prop.price} (Income: ₹${prop.monthlyIncome}/month)
+        </div>`;
+    }
+    html += "</div>";
+    document.getElementById("propertyListModal").innerHTML = html;
+    document.getElementById("propertyListModal").classList.add("active");       
+}
+
+function listPropertyForSale(propertyId) {
+    let prop = gameState.properties.find(p => p.id === propertyId);
+    if (!prop) return;
+
+    prop.forSale = true;
+    prop.salePrice = prop.price;
+    savePlayerData();
+    playSound('buy');
+    alert("✅ Property listed for sale! Price: ₹" + prop.price);
+    closeModal("propertyListModal");
+    updateGameUI();
+}
+
+function showPropertyBuyModal() {
+    let players = getAllPlayers();
+    let availableProperties = [];
+
+    for (let player of players) {
+        if (!player.properties) continue;
+        for (let prop of player.properties) {
+            if (prop.forSale && player.username !== gameState.username) {       
+                availableProperties.push({...prop, seller: player.username});   
+            }
+        }
+    }
+
+    let html = "<h2>🛒 BUY A PROPERTY</h2>";
+    if (availableProperties.length === 0) {
+        html += "<p style='color: #aaa;'>No properties for sale...</p>";        
+    } else {
+        html += "<div style='max-height: 400px; overflow-y: auto;'>";
+        for (let prop of availableProperties) {
+            html += `<div class="propertyItem" style="padding: 10px; margin: 5px 0; background: #1a1a1a; border-radius: 8px;">
+                <strong>${prop.name}</strong> (from ${prop.seller})<br>
+                💰 ₹${prop.salePrice} | 📈 ₹${prop.monthlyIncome}/month<br>
+                <button onclick="buyPropertyFromPlayer('${prop.seller}', ${prop.id})" style="background: #00ff88; color: #000; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin-top: 5px;">BUY</button>
+            </div>`;
+        }
+        html += "</div>";
+    }
+    document.getElementById("propertyListModal").innerHTML = html;
+    document.getElementById("propertyListModal").classList.add("active");       
+}
+
+function buyPropertyFromPlayer(sellerUsername, propertyId) {
+    let players = getAllPlayers();
+    let seller = players.find(p => p.username === sellerUsername);
+    if (!seller) {
+        alert("❌ Seller not found!");
+        return;
+    }
+
+    let prop = seller.properties.find(p => p.id === propertyId);
+    if (!prop || !prop.forSale) {
+        alert("❌ Property not available!");
+        return;
+    }
+
+    if (gameState.money < prop.salePrice) {
+        alert("❌ NOT ENOUGH MONEY!");
+        return;
+    }
+
+    gameState.money -= prop.salePrice;
+    seller.money = (seller.money || 5000) + prop.salePrice;
+
+    prop.forSale = false;
+    if (!gameState.properties) gameState.properties = [];
+    gameState.properties.push({...prop, previousSeller: sellerUsername});       
+    seller.properties = seller.properties.filter(p => p.id !== propertyId);     
+
+    savePlayerData();
+    saveAllPlayers(players);
+    playSound('buy');
+    alert("✅ Property purchased from " + sellerUsername + "!");
+    closeModal("propertyListModal");
+    updateGameUI();
+}
+
+function createTrade() {
+    let withPlayer = document.getElementById("tradeWithUsername").value.trim(); 
+    let amount = parseFloat(document.getElementById("tradeAmount").value || 0); 
+    let item = document.getElementById("tradeItem").value.trim();
+
+    if (!withPlayer || !amount || !item || amount > gameState.money) {
+        alert("❌ Invalid trade details!");
+        return;
+    }
+
+    let players = JSON.parse(localStorage.getItem("cashThrone_players")) || {}; 
+    if (!players[withPlayer]) {
+        alert("❌ Player not found!");
+        return;
+    }
+
+    let fee = amount * 0.05; // 5% transaction fee
+    let afterFee = amount - fee;
+
+    gameState.money -= amount;
+    let trade = {
+        id: Date.now(),
+        from: currentUser,
+        to: withPlayer,
+        item: item,
+        amount: afterFee,
+        status: "pending",
+        timestamp: new Date().toLocaleString()
+    };
+
+    players[withPlayer].tradeOffers.push(trade);
+    savePlayerData();
+    localStorage.setItem("cashThrone_players", JSON.stringify(players));        
+
+    alert("✅ Trade offer sent! 💬");
+    closeModal("createTradeModal");
+    updateGameUI();
+}
+
+function showAddFriendModal() {
+    document.getElementById("addFriendModal").classList.add("active");
+    let html = "";
+    let players = JSON.parse(localStorage.getItem("cashThrone_players")) || {}; 
+    for (let player in players) {
+        if (player !== currentUser && !gameState.friends.includes(player)) {    
+            html += `<div style="background: rgba(0,255,136,0.1); padding: 8px; margin: 5px 0; border-radius: 6px; cursor: pointer;" onclick="addFriendDirect('${player}')">${player} 🌍 ${Object.keys(currencies).find(c => currencies[c].code === players[player].currency)}</div>`;
+        }
+    }
+    document.getElementById("onlinePlayersList").innerHTML = html || "<p style='color: #aaa;'>No players available</p>";
+}
+
+function addFriendDirect(username) {
+    if (!gameState.friends.includes(username)) {
+        gameState.friends.push(username);
+        savePlayerData();
+        alert("✅ Friend added: " + username);
+        showAddFriendModal();
+    }
+}
+
+function addFriend() {
+    let username = document.getElementById("friendUsername").value.trim();      
+    if (username && !gameState.friends.includes(username)) {
+        gameState.friends.push(username);
+        savePlayerData();
+        alert("✅ Friend added!");
+        closeModal("addFriendModal");
+    }
+}
+
+function updateFriends() {
+    let html = "";
+    for (let friend of gameState.friends) {
+        html += `<div class="card">
+            <div class="card-title">${friend}</div>
+            <button class="btn-secondary" onclick="openChatWith('${friend}')" style="width: 100%; margin-top: 10px;">💬 CHAT</button>
+            <button class="sell" onclick="removeFriend('${friend}')" style="width: 100%; margin-top: 5px; background: #ff6b6b;">❌ REMOVE</button>
+        </div>`;
+    }
+    document.getElementById("friends-list").innerHTML = html || "<p style='text-align: center; color: #aaa;'>No friends yet. Add some!</p>";
+}
+
+function removeFriend(friend) {
+    gameState.friends = gameState.friends.filter(f => f !== friend);
+    savePlayerData();
+    updateFriends();
+}
+
+function updateTrades() {
+    let html = "<h3 style='color: #00ff88; margin: 15px 0;'>📬 INCOMING OFFERS</h3>";
+    if (gameState.tradeOffers.length === 0) {
+        html += "<p style='color: #aaa;'>No trade offers</p>";
+    } else {
+        for (let trade of gameState.tradeOffers) {
+            html += `<div class="trade-card">
+                <p><strong>From:</strong> ${trade.from}</p>
+                <p><strong>Item:</strong> ${trade.item}</p>
+                <p><strong>Amount:</strong> ${Math.floor(trade.amount)} ${gameState.currency}</p>
+                <p style="font-size: 0.9em; color: #aaa;">Trans fee: 5%</p>     
+                <button class="btn-primary" onclick="acceptTrade(${trade.id}, '${trade.from}', ${trade.amount})" style="margin: 5px 0; width: 48%; display: inline-block;">✅ ACCEPT</button>
+                <button class="sell" onclick="rejectTrade(${trade.id})" style="margin: 5px 0; width: 48%; display: inline-block;">❌ REJECT</button>
+            </div>`;
+        }
+    }
+    document.getElementById("trades-list").innerHTML = html;
+}
+
+function acceptTrade(tradeId, fromPlayer, amount) {
+    if (gameState.money >= amount) {
+        gameState.money -= amount;
+        let players = JSON.parse(localStorage.getItem("cashThrone_players")) || {};
+        players[fromPlayer].money += amount;
+
+        gameState.tradeOffers = gameState.tradeOffers.filter(t => t.id !== tradeId);
+
+        savePlayerData();
+        localStorage.setItem("cashThrone_players", JSON.stringify(players));    
+
+        alert("✅ Trade accepted!");
+        updateTrades();
+        updateGameUI();
+    } else {
+        alert("❌ Not enough money!");
+    }
+}
+
+function rejectTrade(tradeId) {
+    gameState.tradeOffers = gameState.tradeOffers.filter(t => t.id !== tradeId);
+    savePlayerData();
+    updateTrades();
+}
+
+function showPropertyMarketModal() {
+    document.getElementById("propertyMarketModal").classList.add("active");     
+}
+
+function showPropertyBuyModal() {
+    document.getElementById("propertyBuyModal").classList.add("active");        
+    updatePropertyMarket();
+}
+
+function listProperty() {
+    let name = document.getElementById("propertyName").value.trim();
+    let price = parseFloat(document.getElementById("propertyPrice").value || 0);
+    let income = parseFloat(document.getElementById("propertyIncome").value || 0);
+    let type = document.getElementById("propertyType").value;
+
+    if (!name || price <= 0) {
+        alert("❌ Invalid property details!");
+        return;
+    }
+
+    let property = {
+        id: Date.now(),
+        name: name,
+        price: price,
+        income: income,
+        type: type,
+        owner: currentUser,
+        forSale: true
+    };
+
+    gameState.properties.push(property);
+    savePlayerData();
+    alert("✅ Property listed!");
+    closeModal("propertyMarketModal");
+    updateProperties();
+}
+
+function updatePropertyMarket() {
+    let html = "";
+    let players = JSON.parse(localStorage.getItem("cashThrone_players")) || {}; 
+    for (let player in players) {
+        for (let prop of players[player].properties) {
+            if (prop.forSale && player !== currentUser) {
+                html += `<div class="trade-card">
+                    <p><strong>${prop.name}</strong> (${prop.type})</p>
+                    <p>Owner: ${player}</p>
+                    <p>Price: ${Math.floor(prop.price)} ${gameState.currency}</p>
+                    <p>Daily Income: ${Math.floor(prop.income)} ${gameState.currency}</p>
+                    <button class="btn-primary" onclick="buyProperty('${player}', ${prop.id}, ${prop.price})" style="width: 100%; margin-top: 10px;">🛒 BUY</button>
+                </div>`;
+            }
+        }
+    }
+    document.getElementById("propertiesMarketList").innerHTML = html || "<p style='color: #aaa;'>No properties available</p>";
+}
+
+function buyProperty(owner, propId, price) {
+    if (gameState.money >= price) {
+        gameState.money -= price;
+        let players = JSON.parse(localStorage.getItem("cashThrone_players")) || {};
+
+        let property = null;
+        for (let prop of players[owner].properties) {
+            if (prop.id === propId) {
+                property = prop;
+                prop.forSale = false;
+                prop.owner = currentUser;
+                break;
+            }
+        }
+
+        if (property) {
+            gameState.properties.push(property);
+            players[owner].money += price;
+
+            savePlayerData();
+            localStorage.setItem("cashThrone_players", JSON.stringify(players));
+            alert("✅ Property purchased!");
+            updatePropertyMarket();
+            updateProperties();
+            updateGameUI();
+        }
+    } else {
+        alert("❌ Not enough money!");
+    }
+}
+
+function updateProperties() {
+    let html = "";
+    if (gameState.properties.length === 0) {
+        html = "<p style='text-align: center; color: #aaa;'>No properties yet</p>";
+    } else {
+        for (let prop of gameState.properties) {
+            html += `<div class="property-list">
+                <p><strong>${prop.name}</strong> (${prop.type})</p>
+                <p>Value: ${Math.floor(prop.price)} ${gameState.currency}</p>   
+                <p>Daily Income: +${Math.floor(prop.income)} ${gameState.currency}</p>
+                <button class="btn-secondary" onclick="leaseProperty(${prop.id})" style="width: 48%; display: inline-block;">📄 LEASE</button>
+                <button class="sell" onclick="removeProperty(${prop.id})" style="width: 48%; display: inline-block; margin-left: 4%;">❌ DELIST</button>        
+            </div>`;
+        }
+    }
+    document.getElementById("my-properties").innerHTML = html;
+}
+
+function leaseProperty(propId) {
+    let prop = gameState.properties.find(p => p.id === propId);
+    if (prop) {
+        prop.forSale = true;
+        savePlayerData();
+        alert("✅ Property listed for sale!");
+        updateProperties();
+    }
+}
+
+function removeProperty(propId) {
+    gameState.properties = gameState.properties.filter(p => p.id !== propId);   
+    savePlayerData();
+    updateProperties();
+    updateGameUI();
+}
+
+function openChatWith(username) {
+    document.getElementById("chatModal").classList.add("active");
+    document.getElementById("chatTitle").textContent = "💬 Chat with " + username;
+    let messages = gameState.messages[username] || [];
+    let html = "";
+    for (let msg of messages) {
+        let isMe = msg.from === currentUser;
+        html += `<div class="message" style="background: ${isMe ? 'rgba(0,255,136,0.2)' : 'rgba(0,150,200,0.2)'};">
+            <strong>${msg.from}:</strong> ${msg.text}
+        </div>`;
+    }
+    document.getElementById("chatMessages").innerHTML = html || "<p style='color: #aaa;'>No messages yet</p>";
+    document.getElementById("chatInput").dataset.target = username;
+}
+
+function sendChatMessage() {
+    let target = document.getElementById("chatInput").dataset.target;
+    let text = document.getElementById("chatInput").value.trim();
+
+    if (!text) return;
+
+    let players = JSON.parse(localStorage.getItem("cashThrone_players")) || {}; 
+
+    // Add to sender's message history
+    if (!gameState.messages[target]) gameState.messages[target] = [];
+    gameState.messages[target].push({from: currentUser, text: text, time: new Date().toLocaleTimeString()});
+
+    // Add to receiver's message history
+    if (players[target]) {
+        if (!players[target].messages[currentUser]) players[target].messages[currentUser] = [];
+        players[target].messages[currentUser].push({from: currentUser, text: text, time: new Date().toLocaleTimeString()});
+    }
+
+    savePlayerData();
+    localStorage.setItem("cashThrone_players", JSON.stringify(players));        
+
+    document.getElementById("chatInput").value = "";
+    openChatWith(target);
+}
+
+function updateLeaderboard() {
+    let players = JSON.parse(localStorage.getItem("cashThrone_players")) || {};
+    let rankings = [];
+    for (let player in players) {
+        let worth = players[player].money;
+        for (let prop of players[player].properties) {
+            worth += prop.price;
+        }
+        rankings.push({player, worth, country: Object.keys(currencies).find(c => currencies[c].code === players[player].currency)});
+    }
+    rankings.sort((a, b) => b.worth - a.worth);
+
+    let html = "";
+    for (let i = 0; i < rankings.length && i < 10; i++) {
+        let medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : (i + 1);
+        html += `<div class="leaderboard-row">
+            <div class="rank">${medal}</div>
+            <div class="player-name">${rankings[i].player}</div>
+            <div>${rankings[i].country}</div>
+            <div style="color: #ffd700;">💰 ${Math.floor(rankings[i].worth)}</div>
+        </div>`;
+    }
+    document.getElementById("leaderboard-list").innerHTML = html;
+}
+
+function closeModal(modalId) {
+    document.getElementById(modalId).classList.remove("active");
+}
+
+function updateStockPrices() {
+    for (let name in stocks) {
+        let change = (Math.random() * 10 - 5);
+        stocks[name].price += change;
+        if (stocks[name].price < 10) stocks[name].price = 10;
+        stocks[name].history.push(stocks[name].price);
+        if (stocks[name].history.length > 24) stocks[name].history.shift();     
+    }
+    updateGameUI();
+}
+
+// Update stock prices every 2 seconds
+setInterval(updateStockPrices, 2000);
+
+// Initialize
+updateGameUI();
+</script>
+</body>
+</html>
