@@ -1,6 +1,7 @@
 <html>
 <head>
-<title>ðŸ’° CASH THRONE GLOBAL - Trade. Compete. Dominate ðŸŒ</title>
+<meta charset="UTF-8">
+<title>💰 CASH THRONE GLOBAL - Trade. Compete. Dominate 🌍</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 * {
@@ -409,15 +410,15 @@ button {
 
 <!-- LOGIN/REGISTRATION SCREEN -->
 <div id="authScreen" class="screen active auth-screen">
-    <div class="auth-title">ðŸ’° CASH THRONE GLOBAL ðŸŒ</div>
+    <div class="auth-title">💰 CASH THRONE GLOBAL 🌍</div>
     <p style="text-align: center; margin-bottom: 20px; color: #ffd700;">Become a Global Billionaire!</p>
     
     <div id="loginForm">
         <div class="auth-title" style="font-size: 1.3em; margin-bottom: 15px;">LOGIN</div>
         <input type="text" id="loginUsername" placeholder="Username" maxlength="15">
         <input type="password" id="loginPassword" placeholder="Password">
-        <button class="btn-primary" onclick="login()">ðŸ”“ LOGIN</button>
-        <button class="btn-secondary" onclick="toggleForm()">ðŸ“ CREATE ACCOUNT</button>
+        <button class="btn-primary" onclick="login()">🔓 LOGIN</button>
+        <button class="btn-secondary" onclick="toggleForm()">📝 CREATE ACCOUNT</button>
         <div id="loginError"></div>
     </div>
 
@@ -427,25 +428,25 @@ button {
         <input type="password" id="regPassword" placeholder="Password" maxlength="20">
         <input type="password" id="regPassword2" placeholder="Confirm Password" maxlength="20">
         <select id="regCountry">
-            <option value="">ðŸŒ Select Country</option>
-            <option value="USA">ðŸ‡ºðŸ‡¸ USA (USD)</option>
-            <option value="UK">ðŸ‡¬ðŸ‡§ UK (GBP)</option>
-            <option value="India">ðŸ‡®ðŸ‡³ India (INR)</option>
-            <option value="Japan">ðŸ‡¯ðŸ‡µ Japan (JPY)</option>
-            <option value="Germany">ðŸ‡©ðŸ‡ª Germany (EUR)</option>
-            <option value="Brazil">ðŸ‡§ðŸ‡· Brazil (BRL)</option>
-            <option value="China">ðŸ‡¨ðŸ‡³ China (CNY)</option>
-            <option value="Canada">ðŸ‡¨ðŸ‡¦ Canada (CAD)</option>
+            <option value="">🌍 Select Country</option>
+            <option value="USA">🇺🇸 USA (USD)</option>
+            <option value="UK">🇬🇧 UK (GBP)</option>
+            <option value="India">🇮🇳 India (INR)</option>
+            <option value="Japan">🇯🇵 Japan (JPY)</option>
+            <option value="Germany">🇩🇪 Germany (EUR)</option>
+            <option value="Brazil">🇧🇷 Brazil (BRL)</option>
+            <option value="China">🇨🇳 China (CNY)</option>
+            <option value="Canada">🇨🇦 Canada (CAD)</option>
         </select>
-        <button class="btn-primary" onclick="register()">âœ¨ CREATE ACCOUNT</button>
-        <button class="btn-secondary" onclick="toggleForm()">ðŸ”™ BACK TO LOGIN</button>
+        <button class="btn-primary" onclick="register()">✨ CREATE ACCOUNT</button>
+        <button class="btn-secondary" onclick="toggleForm()">🔙 BACK TO LOGIN</button>
         <div id="registerError"></div>
     </div>
 </div>
 
 <!-- MAIN GAME SCREEN -->
 <div id="gameScreen" class="screen">
-    <h1>ðŸ’° CASH THRONE GLOBAL ðŸ‘‘</h1>
+    <h1>💰 CASH THRONE GLOBAL 👑</h1>
     <div style="display: flex; gap: 10px; justify-content: center; margin-bottom: 15px; flex-wrap: wrap;">
         <button class="btn-logout" onclick="logout()">LOGOUT</button>
     </div>
@@ -458,40 +459,40 @@ button {
         </div>
         <div class="stats">
             <div class="stat">
-                <div class="stat-label">ðŸ’µ Wallet</div>
+                <div class="stat-label">💵 Wallet</div>
                 <div class="stat-value" id="walletValue">1000</div>
             </div>
             <div class="stat">
-                <div class="stat-label">ðŸ‘‘ Net Worth</div>
+                <div class="stat-label">👑 Net Worth</div>
                 <div class="stat-value" id="netWorth">1000</div>
             </div>
             <div class="stat">
-                <div class="stat-label">ðŸ¤ Friends</div>
+                <div class="stat-label">🤝 Friends</div>
                 <div class="stat-value" id="friendCount">0</div>
             </div>
             <div class="stat">
-                <div class="stat-label">ðŸª Properties</div>
+                <div class="stat-label">🏪 Properties</div>
                 <div class="stat-value" id="propertyCount">0</div>
             </div>
         </div>
     </div>
 
     <div class="tabs">
-        <button class="tab-button active" onclick="switchTab('market')">ðŸŒ MARKET</button>
-        <button class="tab-button" onclick="switchTab('trade')">ðŸ¤ TRADE</button>
-        <button class="tab-button" onclick="switchTab('companies')">ðŸ¢ COMPANIES</button>
-        <button class="tab-button" onclick="switchTab('properties')">ðŸ  PROPERTIES</button>
-        <button class="tab-button" onclick="switchTab('friends')">ðŸ’¬ FRIENDS</button>
-        <button class="tab-button" onclick="switchTab('leaderboard')">ðŸ† LEADERBOARD</button>
+        <button class="tab-button active" onclick="switchTab('market')">🌍 MARKET</button>
+        <button class="tab-button" onclick="switchTab('trade')">🤝 TRADE</button>
+        <button class="tab-button" onclick="switchTab('companies')">🏢 COMPANIES</button>
+        <button class="tab-button" onclick="switchTab('properties')">🏠 PROPERTIES</button>
+        <button class="tab-button" onclick="switchTab('friends')">💬 FRIENDS</button>
+        <button class="tab-button" onclick="switchTab('leaderboard')">🏆 LEADERBOARD</button>
     </div>
 
     <!-- MARKET TAB -->
     <div id="market" class="tab-content active">
-        <div class="info-box">ðŸ“ˆ Buy & Sell Stocks! Prices change every 2 seconds! ðŸ“Š</div>
+        <div class="info-box">📈 Buy & Sell Stocks! Prices change every 2 seconds! 📊</div>
         <div id="stocks-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; max-width: 1400px; margin: 15px auto; padding: 0 10px;">
         </div>
         <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 2px solid #00ff88;">
-            <h3 style="color: #ffd700; margin-bottom: 15px;">ðŸ’± CURRENCY EXCHANGE RATES</h3>
+            <h3 style="color: #ffd700; margin-bottom: 15px;">💱 CURRENCY EXCHANGE RATES</h3>
             <div id="currency-rates" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; max-width: 900px; margin: 0 auto;">
             </div>
         </div>
@@ -499,42 +500,42 @@ button {
 
     <!-- TRADE TAB -->
     <div id="trade" class="tab-content">
-        <div class="info-box">ðŸ¤ Trade with other players! Browse offers and make trades!</div>
-        <button class="btn-primary" onclick="showCreateTradeModal()" style="max-width: 300px; margin: 10px auto; display: block;">âœ¨ CREATE TRADE OFFER</button>
+        <div class="info-box">🤝 Trade with other players! Browse offers and make trades!</div>
+        <button class="btn-primary" onclick="showCreateTradeModal()" style="max-width: 300px; margin: 10px auto; display: block;">✨ CREATE TRADE OFFER</button>
         <div id="trades-list" style="max-width: 800px; margin: 15px auto;">
         </div>
     </div>
 
     <!-- COMPANIES TAB -->
     <div id="companies" class="tab-content">
-        <div class="info-box">ðŸ¢ Start your own business! Each company generates passive income! ðŸ’°</div>
-        <button class="btn-primary" onclick="showCreateCompanyModal()" style="max-width: 300px; margin: 10px auto; display: block;">ðŸ†• START COMPANY</button>
-        <h3 style="color: #00ff88; margin: 30px 0 15px; text-align: center;">ðŸ¢ YOUR COMPANIES</h3>
+        <div class="info-box">🏢 Start your own business! Each company generates passive income! 💰</div>
+        <button class="btn-primary" onclick="showCreateCompanyModal()" style="max-width: 300px; margin: 10px auto; display: block;">🆕 START COMPANY</button>
+        <h3 style="color: #00ff88; margin: 30px 0 15px; text-align: center;">🏢 YOUR COMPANIES</h3>
         <div id="my-companies" style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; padding: 0 10px;">
         </div>
     </div>
 
     <!-- PROPERTIES TAB -->
     <div id="properties" class="tab-content">
-        <div class="info-box">ðŸ  Real Estate Investment - Buy properties to earn daily income! ðŸ’¸</div>
-        <button class="btn-primary" onclick="showPropertyListModal()" style="max-width: 300px; margin: 10px auto; display: block;">ðŸ“¢ LIST YOUR PROPERTY</button>
-        <button class="btn-primary" onclick="showPropertyBuyModal()" style="max-width: 300px; margin: 10px auto; display: block;">ðŸ›’ BUY A PROPERTY</button>
-        <h3 style="color: #00ff88; margin: 30px 0 15px; text-align: center;">ðŸ  YOUR PROPERTIES</h3>
+        <div class="info-box">🏠 Real Estate Investment - Buy properties to earn daily income! 💸</div>
+        <button class="btn-primary" onclick="showPropertyListModal()" style="max-width: 300px; margin: 10px auto; display: block;">📢 LIST YOUR PROPERTY</button>
+        <button class="btn-primary" onclick="showPropertyBuyModal()" style="max-width: 300px; margin: 10px auto; display: block;">🛒 BUY A PROPERTY</button>
+        <h3 style="color: #00ff88; margin: 30px 0 15px; text-align: center;">🏠 YOUR PROPERTIES</h3>
         <div id="my-properties" style="max-width: 1000px; margin: 0 auto;">
         </div>
     </div>
 
     <!-- FRIENDS TAB -->
     <div id="friends" class="tab-content">
-        <div class="info-box">ðŸ’¬ Add friends and chat! ðŸ’­</div>
-        <button class="btn-primary" onclick="showAddFriendModal()" style="max-width: 300px; margin: 10px auto; display: block;">âž• ADD FRIEND</button>
+        <div class="info-box">💬 Add friends and chat! 💭</div>
+        <button class="btn-primary" onclick="showAddFriendModal()" style="max-width: 300px; margin: 10px auto; display: block;">➕ ADD FRIEND</button>
         <div id="friends-list" style="max-width: 900px; margin: 15px auto;">
         </div>
     </div>
 
     <!-- LEADERBOARD TAB -->
     <div id="leaderboard" class="tab-content">
-        <div class="info-box">ðŸ† Global rankings! See who's winning! ðŸ’Ž</div>
+        <div class="info-box">🏆 Global rankings! See who's winning! 💎</div>
         <div id="leaderboard-list" style="max-width: 600px; margin: 15px auto;">
         </div>
     </div>
@@ -543,22 +544,22 @@ button {
 <!-- MODALS -->
 <div id="createTradeModal" class="modal">
     <div class="modal-content">
-        <button class="close-btn" onclick="closeModal('createTradeModal')">âœ•</button>
-        <div class="modal-title">âœ¨ CREATE TRADE OFFER</div>
+        <button class="close-btn" onclick="closeModal('createTradeModal')">✕</button>
+        <div class="modal-title">✨ CREATE TRADE OFFER</div>
         <input type="text" id="tradeWithUsername" placeholder="Trade with player (username)">
         <input type="number" id="tradeAmount" placeholder="Amount to trade" min="1">
         <input type="text" id="tradeItem" placeholder="Item/Good (e.g., Bitcoin, Gold, Stocks)">
-        <p style="color: #ffd700; margin: 10px 0;">ðŸ’° You will get: <span id="tradeGetAmount">0</span> (after fees)</p>
-        <button class="btn-primary" onclick="createTrade()" style="margin-top: 10px;">âœ… SEND OFFER</button>
+        <p style="color: #ffd700; margin: 10px 0;">💰 You will get: <span id="tradeGetAmount">0</span> (after fees)</p>
+        <button class="btn-primary" onclick="createTrade()" style="margin-top: 10px;">✅ SEND OFFER</button>
     </div>
 </div>
 
 <div id="addFriendModal" class="modal">
     <div class="modal-content">
-        <button class="close-btn" onclick="closeModal('addFriendModal')">âœ•</button>
-        <div class="modal-title">âž• ADD FRIEND</div>
+        <button class="close-btn" onclick="closeModal('addFriendModal')">✕</button>
+        <div class="modal-title">➕ ADD FRIEND</div>
         <input type="text" id="friendUsername" placeholder="Friend's username">
-        <button class="btn-primary" onclick="addFriend()" style="margin-top: 10px;">ðŸ¤ SEND REQUEST</button>
+        <button class="btn-primary" onclick="addFriend()" style="margin-top: 10px;">🤝 SEND REQUEST</button>
         <div id="friendsList" style="margin-top: 15px;">
             <p style="color: #aaa;">Online players:</p>
             <div id="onlinePlayersList"></div>
@@ -568,47 +569,47 @@ button {
 
 <div id="createCompanyModal" class="modal">
     <div class="modal-content">
-        <button class="close-btn" onclick="closeModal('createCompanyModal')">âœ•</button>
-        <div class="modal-title">ðŸ†• START YOUR COMPANY</div>
+        <button class="close-btn" onclick="closeModal('createCompanyModal')">✕</button>
+        <div class="modal-title">🆕 START YOUR COMPANY</div>
         <input type="text" id="companyName" placeholder="Company name" maxlength="20">
         <select id="companyTypeSelect" onchange="updateCompanyTypeInfo()">
             <option value="">-- Select Business Type --</option>
-            <option value="tech">ðŸ’» Tech Startup (â‚¹5000)</option>
-            <option value="retail">ðŸ›ï¸ Retail Store (â‚¹3000)</option>
-            <option value="food">ðŸ” Food Business (â‚¹2000)</option>
-            <option value="pharma">ðŸ’Š Pharma Co (â‚¹8000)</option>
-            <option value="entertainment">ðŸŽ¬ Entertainment (â‚¹4000)</option>
+            <option value="tech">💻 Tech Startup (₹5000)</option>
+            <option value="retail">🛍️ Retail Store (₹3000)</option>
+            <option value="food">🍔 Food Business (₹2000)</option>
+            <option value="pharma">💊 Pharma Co (₹8000)</option>
+            <option value="entertainment">🎬 Entertainment (₹4000)</option>
         </select>
         <div style="background: rgba(0,150,200,0.2); padding: 12px; border-radius: 8px; margin: 10px 0; font-size: 0.95em;">
             <p id="companyTypeInfo" style="color: #ffd700;">Select a business type to see details</p>
         </div>
-        <button class="btn-primary" onclick="createCompany()" style="margin-top: 10px;">âœ¨ CREATE NOW</button>
+        <button class="btn-primary" onclick="createCompany()" style="margin-top: 10px;">✨ CREATE NOW</button>
     </div>
 </div>
 
 <div id="propertyListModal" class="modal">
     <div class="modal-content">
-        <button class="close-btn" onclick="closeModal('propertyListModal')">âœ•</button>
-        <div class="modal-title">ðŸ“¢ LIST YOUR PROPERTY</div>
+        <button class="close-btn" onclick="closeModal('propertyListModal')">✕</button>
+        <div class="modal-title">📢 LIST YOUR PROPERTY</div>
         <input type="text" id="propertyName" placeholder="Property name (e.g., Downtown Office)">
         <input type="number" id="propertyPrice" placeholder="Asking price" min="100">
         <input type="number" id="propertyIncome" placeholder="Daily rental income" min="0">
         <select id="propertyType">
-            <option value="house">ðŸ  House</option>
-            <option value="apartment">ðŸ¢ Apartment</option>
-            <option value="office">ðŸ›ï¸ Office</option>
-            <option value="mall">ðŸª Mall</option>
-            <option value="land">ðŸŒ³ Land</option>
-            <option value="factory">ðŸ­ Factory</option>
+            <option value="house">🏠 House</option>
+            <option value="apartment">🏢 Apartment</option>
+            <option value="office">🏛️ Office</option>
+            <option value="mall">🏪 Mall</option>
+            <option value="land">🌳 Land</option>
+            <option value="factory">🏭 Factory</option>
         </select>
-        <button class="btn-primary" onclick="listProperty()" style="margin-top: 10px;">ðŸ“¢ LIST NOW</button>
+        <button class="btn-primary" onclick="listProperty()" style="margin-top: 10px;">📢 LIST NOW</button>
     </div>
 </div>
 
 <div id="propertyBuyModal" class="modal">
     <div class="modal-content">
-        <button class="close-btn" onclick="closeModal('propertyBuyModal')">âœ•</button>
-        <div class="modal-title">ðŸ›’ BROWSE PROPERTIES</div>
+        <button class="close-btn" onclick="closeModal('propertyBuyModal')">✕</button>
+        <div class="modal-title">🛒 BROWSE PROPERTIES</div>
         <div id="propertiesMarketList" style="max-height: 400px; overflow-y: auto;">
         </div>
     </div>
@@ -616,12 +617,12 @@ button {
 
 <div id="chatModal" class="modal">
     <div class="modal-content">
-        <button class="close-btn" onclick="closeModal('chatModal')">âœ•</button>
-        <div class="modal-title" id="chatTitle">ðŸ’¬ Chat</div>
+        <button class="close-btn" onclick="closeModal('chatModal')">✕</button>
+        <div class="modal-title" id="chatTitle">💬 Chat</div>
         <div class="message-box" id="chatMessages"></div>
         <div style="margin-top: 10px;">
             <input type="text" id="chatInput" placeholder="Type message..." onkeypress="if(event.key==='Enter') sendChatMessage()">
-            <button class="btn-primary" onclick="sendChatMessage()" style="margin-top: 5px;">ðŸ“¤ SEND</button>
+            <button class="btn-primary" onclick="sendChatMessage()" style="margin-top: 5px;">📤 SEND</button>
         </div>
     </div>
 </div>
@@ -654,39 +655,39 @@ try {
 
 const currencies = {
     "USA": {code: "USD", symbol: "$", rate: 1},
-    "UK": {code: "GBP", symbol: "Â£", rate: 0.73},
-    "India": {code: "INR", symbol: "â‚¹", rate: 82},
-    "Japan": {code: "JPY", symbol: "Â¥", rate: 135},
-    "Germany": {code: "EUR", symbol: "â‚¬", rate: 0.92},
+    "UK": {code: "GBP", symbol: "£", rate: 0.73},
+    "India": {code: "INR", symbol: "₹", rate: 82},
+    "Japan": {code: "JPY", symbol: "¥", rate: 135},
+    "Germany": {code: "EUR", symbol: "€", rate: 0.92},
     "Brazil": {code: "BRL", symbol: "R$", rate: 5.1},
-    "China": {code: "CNY", symbol: "Â¥", rate: 6.9},
+    "China": {code: "CNY", symbol: "¥", rate: 6.9},
     "Canada": {code: "CAD", symbol: "$", rate: 1.35}
 };
 
 const stocks = {
-    "ðŸš€ RocketX": {emoji: "ðŸš€", price: 150, owned: 0, history: [150]},
-    "ðŸ“± TechHub": {emoji: "ðŸ“±", price: 140, owned: 0, history: [140]},
-    "ðŸ¥ HealthCo": {emoji: "ðŸ¥", price: 180, owned: 0, history: [180]},
-    "âš¡ PowerGrid": {emoji: "âš¡", price: 110, owned: 0, history: [110]},
-    "ðŸŽ¬ StreamFlix": {emoji: "ðŸŽ¬", price: 125, owned: 0, history: [125]},
-    "ðŸ›ï¸ MallPlus": {emoji: "ðŸ›ï¸", price: 95, owned: 0, history: [95]},
-    "âœˆï¸ SkyTravel": {emoji: "âœˆï¸", price: 160, owned: 0, history: [160]},
-    "ðŸ¦ BankCorp": {emoji: "ðŸ¦", price: 200, owned: 0, history: [200]},
-    "ðŸš— AutoWorks": {emoji: "ðŸš—", price: 135, owned: 0, history: [135]},
-    "ðŸ” FoodChain": {emoji: "ðŸ”", price: 90, owned: 0, history: [90]},
-    "ðŸŽ® GameStudio": {emoji: "ðŸŽ®", price: 165, owned: 0, history: [165]},
-    "â˜• CoffeeCorp": {emoji: "â˜•", price: 85, owned: 0, history: [85]}
+    "🚀 RocketX": {emoji: "🚀", price: 150, owned: 0, history: [150]},
+    "📱 TechHub": {emoji: "📱", price: 140, owned: 0, history: [140]},
+    "🏥 HealthCo": {emoji: "🏥", price: 180, owned: 0, history: [180]},
+    "⚡ PowerGrid": {emoji: "⚡", price: 110, owned: 0, history: [110]},
+    "🎬 StreamFlix": {emoji: "🎬", price: 125, owned: 0, history: [125]},
+    "🛍️ MallPlus": {emoji: "🛍️", price: 95, owned: 0, history: [95]},
+    "✈️ SkyTravel": {emoji: "✈️", price: 160, owned: 0, history: [160]},
+    "🏦 BankCorp": {emoji: "🏦", price: 200, owned: 0, history: [200]},
+    "🚗 AutoWorks": {emoji: "🚗", price: 135, owned: 0, history: [135]},
+    "🍔 FoodChain": {emoji: "🍔", price: 90, owned: 0, history: [90]},
+    "🎮 GameStudio": {emoji: "🎮", price: 165, owned: 0, history: [165]},
+    "☕ CoffeeCorp": {emoji: "☕", price: 85, owned: 0, history: [85]}
 };
 
 let currentUser = null;
 let gameState = {};
 
 const companyTypes = {
-    "tech": {name: "ðŸ’» TECH STARTUP", cost: 5000, monthlyIncome: 800},
-    "retail": {name: "ðŸ›ï¸ RETAIL STORE", cost: 3000, monthlyIncome: 500},
-    "food": {name: "ðŸ” FOOD BUSINESS", cost: 2000, monthlyIncome: 400},
-    "pharma": {name: "ðŸ’Š PHARMA CO", cost: 8000, monthlyIncome: 1500},
-    "entertainment": {name: "ðŸŽ¬ ENTERTAINMENT", cost: 4000, monthlyIncome: 600}
+    "tech": {name: "💻 TECH STARTUP", cost: 5000, monthlyIncome: 800},
+    "retail": {name: "🛍️ RETAIL STORE", cost: 3000, monthlyIncome: 500},
+    "food": {name: "🍔 FOOD BUSINESS", cost: 2000, monthlyIncome: 400},
+    "pharma": {name: "💊 PHARMA CO", cost: 8000, monthlyIncome: 1500},
+    "entertainment": {name: "🎬 ENTERTAINMENT", cost: 4000, monthlyIncome: 600}
 };
 
 function toggleForm() {
@@ -701,18 +702,18 @@ function register() {
     let country = document.getElementById("regCountry").value;
     
     if (!username || !password || !country) {
-        document.getElementById("registerError").innerHTML = '<div class="error">âŒ Please fill all fields!</div>';
+        document.getElementById("registerError").innerHTML = '<div class="error">❌ Please fill all fields!</div>';
         return;
     }
     
     if (password !== password2) {
-        document.getElementById("registerError").innerHTML = '<div class="error">âŒ Passwords don\'t match!</div>';
+        document.getElementById("registerError").innerHTML = '<div class="error">❌ Passwords don\'t match!</div>';
         return;
     }
     
     let users = JSON.parse(localStorage.getItem("cashThrone_users")) || {};
     if (users[username]) {
-        document.getElementById("registerError").innerHTML = '<div class="error">âŒ Username already taken!</div>';
+        document.getElementById("registerError").innerHTML = '<div class="error">❌ Username already taken!</div>';
         return;
     }
     
@@ -724,7 +725,7 @@ function register() {
         firebase.database().ref("users/" + username).set({password, country}).catch(e => console.log("Offline mode"));
     }
     
-    document.getElementById("registerError").innerHTML = '<div class="success">âœ… Account created! Login now!</div>';
+    document.getElementById("registerError").innerHTML = '<div class="success">✅ Account created! Login now!</div>';
     setTimeout(() => toggleForm(), 1500);
 }
 
@@ -733,7 +734,7 @@ function login() {
     let password = document.getElementById("loginPassword").value;
     
     if (!username || !password) {
-        document.getElementById("loginError").innerHTML = '<div class="error">âŒ Please enter username and password!</div>';
+        document.getElementById("loginError").innerHTML = '<div class="error">❌ Please enter username and password!</div>';
         return;
     }
     
@@ -745,7 +746,7 @@ function login() {
                 if (userData.password === password) {
                     completeLogin(username, userData);
                 } else {
-                    document.getElementById("loginError").innerHTML = '<div class="error">âŒ Invalid login!</div>';
+                    document.getElementById("loginError").innerHTML = '<div class="error">❌ Invalid login!</div>';
                 }
             } else {
                 tryLocalLogin(username, password);
@@ -761,7 +762,7 @@ function login() {
 function tryLocalLogin(username, password) {
     let users = JSON.parse(localStorage.getItem("cashThrone_users")) || {};
     if (!users[username] || users[username].password !== password) {
-        document.getElementById("loginError").innerHTML = '<div class="error">âŒ Invalid login!</div>';
+        document.getElementById("loginError").innerHTML = '<div class="error">❌ Invalid login!</div>';
         return;
     }
     completeLogin(username, users[username]);
@@ -916,7 +917,7 @@ function switchTab(tab) {
 
 function updateGameUI() {
     let country = Object.keys(currencies).find(c => currencies[c].code === gameState.currency);
-    document.getElementById("profileInfo").textContent = `${currentUser} ðŸŒ ${country} | ${gameState.currency}`;
+    document.getElementById("profileInfo").textContent = `${currentUser} 🌍 ${country} | ${gameState.currency}`;
     document.getElementById("walletValue").textContent = Math.floor(gameState.money);
     document.getElementById("netWorth").textContent = Math.floor(getNetWorth());
     document.getElementById("friendCount").textContent = gameState.friends.length;
@@ -930,14 +931,14 @@ function updateCompaniesUI() {
     if (!gameState.companies) gameState.companies = [];
     let html = "";
     if (gameState.companies.length === 0) {
-        html = "<p style='text-align: center; color: #aaa;'>No companies yet. Start one to earn passive income! ðŸ’¼</p>";
+        html = "<p style='text-align: center; color: #aaa;'>No companies yet. Start one to earn passive income! 💼</p>";
     } else {
         for (let company of gameState.companies) {
             html += `<div class="card" style="background: linear-gradient(135deg, rgba(255,215,0,0.1) 0%, rgba(0,255,136,0.1) 100%); border-color: #ffd700;">   
                 <div class="card-title">${company.name}</div>
                 <p style="color: #aaa; font-size: 0.9em;">Type: ${companyTypes[company.type].name}</p>
-                <p style="color: #ffd700; font-weight: bold;">ðŸ“ˆ Value: â‚¹${Math.floor(company.value)}</p>
-                <p style="color: #00ff88; font-weight: bold;">ðŸ’° Monthly: +â‚¹${company.monthlyIncome}</p>
+                <p style="color: #ffd700; font-weight: bold;">📈 Value: ₹${Math.floor(company.value)}</p>
+                <p style="color: #00ff88; font-weight: bold;">💰 Monthly: +₹${company.monthlyIncome}</p>
                 <p style="color: #aaa; font-size: 0.85em;">Started: ${company.createdAt}</p>
             </div>`;
         }
@@ -951,15 +952,15 @@ function updatePropertiesUI() {
     if (!gameState.properties) gameState.properties = [];
     let html = "";
     if (gameState.properties.length === 0) {
-        html = "<p style='text-align: center; color: #aaa;'>No properties yet. Buy one to start earning passive income! ðŸ </p>";
+        html = "<p style='text-align: center; color: #aaa;'>No properties yet. Buy one to start earning passive income! 🏠</p>";
     } else {
         for (let prop of gameState.properties) {
             html += `<div class="property-list">
                 <p><strong>${prop.name}</strong> (${prop.type})</p>
-                <p style="color: #ffd700; font-weight: bold;">ðŸ’° Value: â‚¹${Math.floor(prop.price)}</p>
-                <p style="color: #00ff88; font-weight: bold;">ðŸ“ˆ Daily Income: +â‚¹${Math.floor(prop.income)}</p>
+                <p style="color: #ffd700; font-weight: bold;">💰 Value: ₹${Math.floor(prop.price)}</p>
+                <p style="color: #00ff88; font-weight: bold;">📈 Daily Income: +₹${Math.floor(prop.income)}</p>
                 <p style="color: #aaa; font-size: 0.85em;">Owner: ${prop.owner}</p>
-                ${prop.forSale ? `<button class="sell" onclick="delistProperty(${prop.id})" style="width: 100%; margin-top: 8px; background: #ff6b6b; padding: 8px; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; color: white;">âŒ DELIST</button>` : ""}
+                ${prop.forSale ? `<button class="sell" onclick="delistProperty(${prop.id})" style="width: 100%; margin-top: 8px; background: #ff6b6b; padding: 8px; border-radius: 6px; border: none; cursor: pointer; font-weight: bold; color: white;">❌ DELIST</button>` : ""}
             </div>`;
         }
     }
@@ -996,17 +997,17 @@ function updateMarket() {
         let s = stocks[name];
         let change = s.price - s.history[s.history.length - 2 || s.history[0]]; 
         let changePercent = ((change / s.history[s.history.length - 2 || s.history[0]]) * 100).toFixed(1);
-        let emoji = change >= 0 ? "ðŸ“ˆ" : "ðŸ“‰";
+        let emoji = change >= 0 ? "📈" : "📉";
         let changeColor = change >= 0 ? "#00ff88" : "#ff6b6b";
 
         html += `<div class="card" style="border-color: ${changeColor};">       
             <div class="card-title">${name}</div>
-            <div class="card-value" style="color: #ffd700;">â‚¹${Math.floor(s.price)}</div>
+            <div class="card-value" style="color: #ffd700;">₹${Math.floor(s.price)}</div>
             <p style="color: ${changeColor}; font-weight: bold; margin: 8px 0;">
-${emoji} ${(change >= 0 ? '+' : '')}â‚¹${Math.floor(change)} (${changePercent}%)</p>
+${emoji} ${(change >= 0 ? '+' : '')}₹${Math.floor(change)} (${changePercent}%)</p>
             <p style="color: #aaa; margin: 5px 0;">You own: ${s.owned}</p>      
-            <button class="btn-primary" onclick="buyStock('${name}')" style="width: 48%; display: inline-block; margin: 5px 1%; padding: 8px; font-size: 0.9em;">ðŸ›’ BUY</button>
-            <button class="sell" onclick="sellStock('${name}')" style="width: 48%; display: inline-block; margin: 5px 1%; padding: 8px; font-size: 0.9em; background: #ff6b6b;">ðŸ’¸ SELL</button>
+            <button class="btn-primary" onclick="buyStock('${name}')" style="width: 48%; display: inline-block; margin: 5px 1%; padding: 8px; font-size: 0.9em;">🛒 BUY</button>
+            <button class="sell" onclick="sellStock('${name}')" style="width: 48%; display: inline-block; margin: 5px 1%; padding: 8px; font-size: 0.9em; background: #ff6b6b;">💸 SELL</button>
         </div>`;
     }
     document.getElementById("stocks-grid").innerHTML = html;
@@ -1030,11 +1031,11 @@ function buyStock(name) {
         stocks[name].owned++;
         savePlayerData();
         playSound('buy');
-        alert("âœ… Bought 1 share of " + name + "!");
+        alert("✅ Bought 1 share of " + name + "!");
         updateMarket();
         updateGameUI();
     } else {
-        alert("âŒ NOT ENOUGH MONEY! Need â‚¹" + Math.floor(stocks[name].price));
+        alert("❌ NOT ENOUGH MONEY! Need ₹" + Math.floor(stocks[name].price));
     }
 }
 
@@ -1044,11 +1045,11 @@ function sellStock(name) {
         stocks[name].owned--;
         savePlayerData();
         playSound('sell');
-        alert("âœ… Sold 1 share of " + name + "!");
+        alert("✅ Sold 1 share of " + name + "!");
         updateMarket();
         updateGameUI();
     } else {
-        alert("âŒ YOU DON'T OWN THIS STOCK!");
+        alert("❌ YOU DON'T OWN THIS STOCK!");
     }
 }
 
@@ -1081,7 +1082,7 @@ function updateCompanyTypeInfo() {
     let type = document.getElementById("companyTypeSelect").value;
     if (type && companyTypes[type]) {
         let info = companyTypes[type];
-        document.getElementById("companyTypeInfo").innerHTML = `<strong>${info.name}</strong><br>ðŸ’° Investment: â‚¹${info.cost}<br>ðŸ“ˆ Monthly Income: â‚¹${info.monthlyIncome}`;
+        document.getElementById("companyTypeInfo").innerHTML = `<strong>${info.name}</strong><br>💰 Investment: ₹${info.cost}<br>📈 Monthly Income: ₹${info.monthlyIncome}`;
     } else {
         document.getElementById("companyTypeInfo").innerHTML = "Select a business type to see details";
     }
@@ -1092,13 +1093,13 @@ function createCompany() {
     let type = document.getElementById("companyTypeSelect").value;
 
     if (!name || !type || !companyTypes[type]) {
-        alert("âŒ Please fill all fields!");
+        alert("❌ Please fill all fields!");
         return;
     }
 
     let cost = companyTypes[type].cost;
     if (gameState.money < cost) {
-        alert("âŒ NOT ENOUGH MONEY! Need â‚¹" + cost);
+        alert("❌ NOT ENOUGH MONEY! Need ₹" + cost);
         return;
     }
 
@@ -1119,7 +1120,7 @@ function createCompany() {
     gameState.companies.push(company);
     savePlayerData();
     playSound('buy');
-    alert("âœ… " + name + " created! Monthly income: â‚¹" + company.monthlyIncome);
+    alert("✅ " + name + " created! Monthly income: ₹" + company.monthlyIncome);
     closeModal("createCompanyModal");
     document.getElementById("companyName").value = "";
     document.getElementById("companyTypeSelect").value = "";
@@ -1151,15 +1152,15 @@ function saveAllPlayers(players) {
 
 function showPropertyListModal() {
     if (!gameState.properties || gameState.properties.length === 0) {
-        alert("âŒ You have no properties yet! Buy one first.");
+        alert("❌ You have no properties yet! Buy one first.");
         return;
     }
-    let html = "<h2>ðŸ“¢ LIST YOUR PROPERTY</h2>";
+    let html = "<h2>📢 LIST YOUR PROPERTY</h2>";
     html += "<p style='color: #aaa;'>Select a property to list for sale:</p>";  
     html += "<div style='max-height: 300px; overflow-y: auto;'>";
     for (let prop of gameState.properties) {
         html += `<div class="propertyItem" style="padding: 10px; margin: 5px 0; background: #1a1a1a; border-radius: 8px; cursor: pointer;" onclick="listPropertyForSale(${prop.id})">
-            <strong>${prop.name}</strong> - â‚¹${prop.price} (Income: â‚¹${prop.monthlyIncome}/month)
+            <strong>${prop.name}</strong> - ₹${prop.price} (Income: ₹${prop.monthlyIncome}/month)
         </div>`;
     }
     html += "</div>";
@@ -1175,7 +1176,7 @@ function listPropertyForSale(propertyId) {
     prop.salePrice = prop.price;
     savePlayerData();
     playSound('buy');
-    alert("âœ… Property listed for sale! Price: â‚¹" + prop.price);
+    alert("✅ Property listed for sale! Price: ₹" + prop.price);
     closeModal("propertyListModal");
     updateGameUI();
 }
@@ -1186,11 +1187,11 @@ function showPropertyBuyModal() {
 
     // Add starter properties that are always available
     const starterProperties = [
-        {id: "starter_1", name: "ðŸ  Starter House", price: 10000, monthlyIncome: 200, type: "house", seller: "ðŸª Property Market", forSale: true},
-        {id: "starter_2", name: "ðŸ¢ Starter Apartment", price: 15000, monthlyIncome: 300, type: "apartment", seller: "ðŸª Property Market", forSale: true},
-        {id: "starter_3", name: "ðŸ›ï¸ Starter Office", price: 25000, monthlyIncome: 500, type: "office", seller: "ðŸª Property Market", forSale: true},
-        {id: "starter_4", name: "ðŸª Starter Shop", price: 20000, monthlyIncome: 400, type: "mall", seller: "ðŸª Property Market", forSale: true},
-        {id: "starter_5", name: "ðŸŒ³ Starter Land", price: 8000, monthlyIncome: 150, type: "land", seller: "ðŸª Property Market", forSale: true}
+        {id: "starter_1", name: "🏠 Starter House", price: 10000, monthlyIncome: 200, type: "house", seller: "🏪 Property Market", forSale: true},
+        {id: "starter_2", name: "🏢 Starter Apartment", price: 15000, monthlyIncome: 300, type: "apartment", seller: "🏪 Property Market", forSale: true},
+        {id: "starter_3", name: "🏛️ Starter Office", price: 25000, monthlyIncome: 500, type: "office", seller: "🏪 Property Market", forSale: true},
+        {id: "starter_4", name: "🏪 Starter Shop", price: 20000, monthlyIncome: 400, type: "mall", seller: "🏪 Property Market", forSale: true},
+        {id: "starter_5", name: "🌳 Starter Land", price: 8000, monthlyIncome: 150, type: "land", seller: "🏪 Property Market", forSale: true}
     ];
 
     availableProperties = availableProperties.concat(starterProperties);
@@ -1204,7 +1205,7 @@ function showPropertyBuyModal() {
         }
     }
 
-    let html = "<h2>ðŸ›’ BUY A PROPERTY</h2>";
+    let html = "<h2>🛒 BUY A PROPERTY</h2>";
     if (availableProperties.length === 0) {
         html += "<p style='color: #aaa;'>No properties for sale...</p>";        
     } else {
@@ -1212,7 +1213,7 @@ function showPropertyBuyModal() {
         for (let prop of availableProperties) {
             html += `<div class="propertyItem" style="padding: 10px; margin: 5px 0; background: #1a1a1a; border-radius: 8px;">
                 <strong>${prop.name}</strong> (from ${prop.seller})<br>
-                ðŸ’° â‚¹${prop.price} | ðŸ“ˆ â‚¹${prop.monthlyIncome}/month<br>
+                💰 ₹${prop.price} | 📈 ₹${prop.monthlyIncome}/month<br>
                 <button onclick="buyPropertyFromPlayer('${prop.seller}', '${prop.id}')" style="background: #00ff88; color: #000; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; margin-top: 5px;">BUY</button>
             </div>`;
         }
@@ -1224,23 +1225,23 @@ function showPropertyBuyModal() {
 
 function buyPropertyFromPlayer(sellerUsername, propertyId) {
     // Handle starter properties (from Property Market)
-    if (sellerUsername === "ðŸª Property Market") {
+    if (sellerUsername === "🏪 Property Market") {
         const starterProperties = [
-            {id: "starter_1", name: "ðŸ  Starter House", price: 10000, monthlyIncome: 200, type: "house"},
-            {id: "starter_2", name: "ðŸ¢ Starter Apartment", price: 15000, monthlyIncome: 300, type: "apartment"},
-            {id: "starter_3", name: "ðŸ›ï¸ Starter Office", price: 25000, monthlyIncome: 500, type: "office"},
-            {id: "starter_4", name: "ðŸª Starter Shop", price: 20000, monthlyIncome: 400, type: "mall"},
-            {id: "starter_5", name: "ðŸŒ³ Starter Land", price: 8000, monthlyIncome: 150, type: "land"}
+            {id: "starter_1", name: "🏠 Starter House", price: 10000, monthlyIncome: 200, type: "house"},
+            {id: "starter_2", name: "🏢 Starter Apartment", price: 15000, monthlyIncome: 300, type: "apartment"},
+            {id: "starter_3", name: "🏛️ Starter Office", price: 25000, monthlyIncome: 500, type: "office"},
+            {id: "starter_4", name: "🏪 Starter Shop", price: 20000, monthlyIncome: 400, type: "mall"},
+            {id: "starter_5", name: "🌳 Starter Land", price: 8000, monthlyIncome: 150, type: "land"}
         ];
 
         let prop = starterProperties.find(p => p.id === propertyId);
         if (!prop) {
-            alert("âŒ Property not found!");
+            alert("❌ Property not found!");
             return;
         }
 
         if (gameState.money < prop.price) {
-            alert("âŒ NOT ENOUGH MONEY!");
+            alert("❌ NOT ENOUGH MONEY!");
             return;
         }
 
@@ -1256,7 +1257,7 @@ function buyPropertyFromPlayer(sellerUsername, propertyId) {
 
         savePlayerData();
         playSound('buy');
-        alert("âœ… Property purchased from Property Market!");
+        alert("✅ Property purchased from Property Market!");
         closeModal("propertyListModal");
         updateGameUI();
         return;
@@ -1266,18 +1267,18 @@ function buyPropertyFromPlayer(sellerUsername, propertyId) {
     let players = getAllPlayers();
     let seller = players.find(p => p.username === sellerUsername);
     if (!seller) {
-        alert("âŒ Seller not found!");
+        alert("❌ Seller not found!");
         return;
     }
 
     let prop = seller.properties.find(p => p.id === propertyId);
     if (!prop || !prop.forSale) {
-        alert("âŒ Property not available!");
+        alert("❌ Property not available!");
         return;
     }
 
     if (gameState.money < prop.salePrice) {
-        alert("âŒ NOT ENOUGH MONEY!");
+        alert("❌ NOT ENOUGH MONEY!");
         return;
     }
 
@@ -1292,7 +1293,7 @@ function buyPropertyFromPlayer(sellerUsername, propertyId) {
     savePlayerData();
     saveAllPlayers(players);
     playSound('buy');
-    alert("âœ… Property purchased from " + sellerUsername + "!");
+    alert("✅ Property purchased from " + sellerUsername + "!");
     closeModal("propertyListModal");
     updateGameUI();
 }
@@ -1303,13 +1304,13 @@ function createTrade() {
     let item = document.getElementById("tradeItem").value.trim();
 
     if (!withPlayer || !amount || !item || amount > gameState.money) {
-        alert("âŒ Invalid trade details!");
+        alert("❌ Invalid trade details!");
         return;
     }
 
     let players = JSON.parse(localStorage.getItem("cashThrone_players")) || {}; 
     if (!players[withPlayer]) {
-        alert("âŒ Player not found!");
+        alert("❌ Player not found!");
         return;
     }
 
@@ -1331,7 +1332,7 @@ function createTrade() {
     savePlayerData();
     localStorage.setItem("cashThrone_players", JSON.stringify(players));        
 
-    alert("âœ… Trade offer sent! ðŸ’¬");
+    alert("✅ Trade offer sent! 💬");
     closeModal("createTradeModal");
     updateGameUI();
 }
@@ -1342,7 +1343,7 @@ function showAddFriendModal() {
     let players = JSON.parse(localStorage.getItem("cashThrone_players")) || {}; 
     for (let player in players) {
         if (player !== currentUser && !gameState.friends.includes(player)) {    
-            html += `<div style="background: rgba(0,255,136,0.1); padding: 8px; margin: 5px 0; border-radius: 6px; cursor: pointer;" onclick="addFriendDirect('${player}')">${player} ðŸŒ ${Object.keys(currencies).find(c => currencies[c].code === players[player].currency)}</div>`;
+            html += `<div style="background: rgba(0,255,136,0.1); padding: 8px; margin: 5px 0; border-radius: 6px; cursor: pointer;" onclick="addFriendDirect('${player}')">${player} 🌍 ${Object.keys(currencies).find(c => currencies[c].code === players[player].currency)}</div>`;
         }
     }
     document.getElementById("onlinePlayersList").innerHTML = html || "<p style='color: #aaa;'>No players available</p>";
@@ -1352,7 +1353,7 @@ function addFriendDirect(username) {
     if (!gameState.friends.includes(username)) {
         gameState.friends.push(username);
         savePlayerData();
-        alert("âœ… Friend added: " + username);
+        alert("✅ Friend added: " + username);
         showAddFriendModal();
     }
 }
@@ -1362,7 +1363,7 @@ function addFriend() {
     if (username && !gameState.friends.includes(username)) {
         gameState.friends.push(username);
         savePlayerData();
-        alert("âœ… Friend added!");
+        alert("✅ Friend added!");
         closeModal("addFriendModal");
     }
 }
@@ -1372,8 +1373,8 @@ function updateFriends() {
     for (let friend of gameState.friends) {
         html += `<div class="card">
             <div class="card-title">${friend}</div>
-            <button class="btn-secondary" onclick="openChatWith('${friend}')" style="width: 100%; margin-top: 10px;">ðŸ’¬ CHAT</button>
-            <button class="sell" onclick="removeFriend('${friend}')" style="width: 100%; margin-top: 5px; background: #ff6b6b;">âŒ REMOVE</button>
+            <button class="btn-secondary" onclick="openChatWith('${friend}')" style="width: 100%; margin-top: 10px;">💬 CHAT</button>
+            <button class="sell" onclick="removeFriend('${friend}')" style="width: 100%; margin-top: 5px; background: #ff6b6b;">❌ REMOVE</button>
         </div>`;
     }
     document.getElementById("friends-list").innerHTML = html || "<p style='text-align: center; color: #aaa;'>No friends yet. Add some!</p>";
@@ -1386,7 +1387,7 @@ function removeFriend(friend) {
 }
 
 function updateTrades() {
-    let html = "<h3 style='color: #00ff88; margin: 15px 0;'>ðŸ“¬ INCOMING OFFERS</h3>";
+    let html = "<h3 style='color: #00ff88; margin: 15px 0;'>📬 INCOMING OFFERS</h3>";
     if (gameState.tradeOffers.length === 0) {
         html += "<p style='color: #aaa;'>No trade offers</p>";
     } else {
@@ -1396,8 +1397,8 @@ function updateTrades() {
                 <p><strong>Item:</strong> ${trade.item}</p>
                 <p><strong>Amount:</strong> ${Math.floor(trade.amount)} ${gameState.currency}</p>
                 <p style="font-size: 0.9em; color: #aaa;">Trans fee: 5%</p>     
-                <button class="btn-primary" onclick="acceptTrade(${trade.id}, '${trade.from}', ${trade.amount})" style="margin: 5px 0; width: 48%; display: inline-block;">âœ… ACCEPT</button>
-                <button class="sell" onclick="rejectTrade(${trade.id})" style="margin: 5px 0; width: 48%; display: inline-block;">âŒ REJECT</button>
+                <button class="btn-primary" onclick="acceptTrade(${trade.id}, '${trade.from}', ${trade.amount})" style="margin: 5px 0; width: 48%; display: inline-block;">✅ ACCEPT</button>
+                <button class="sell" onclick="rejectTrade(${trade.id})" style="margin: 5px 0; width: 48%; display: inline-block;">❌ REJECT</button>
             </div>`;
         }
     }
@@ -1415,11 +1416,11 @@ function acceptTrade(tradeId, fromPlayer, amount) {
         savePlayerData();
         localStorage.setItem("cashThrone_players", JSON.stringify(players));    
 
-        alert("âœ… Trade accepted!");
+        alert("✅ Trade accepted!");
         updateTrades();
         updateGameUI();
     } else {
-        alert("âŒ Not enough money!");
+        alert("❌ Not enough money!");
     }
 }
 
@@ -1445,7 +1446,7 @@ function listProperty() {
     let type = document.getElementById("propertyType").value;
 
     if (!name || price <= 0) {
-        alert("âŒ Invalid property details!");
+        alert("❌ Invalid property details!");
         return;
     }
 
@@ -1461,7 +1462,7 @@ function listProperty() {
 
     gameState.properties.push(property);
     savePlayerData();
-    alert("âœ… Property listed!");
+    alert("✅ Property listed!");
     closeModal("propertyMarketModal");
     updateProperties();
 }
@@ -1477,7 +1478,7 @@ function updatePropertyMarket() {
                     <p>Owner: ${player}</p>
                     <p>Price: ${Math.floor(prop.price)} ${gameState.currency}</p>
                     <p>Daily Income: ${Math.floor(prop.income)} ${gameState.currency}</p>
-                    <button class="btn-primary" onclick="buyProperty('${player}', ${prop.id}, ${prop.price})" style="width: 100%; margin-top: 10px;">ðŸ›’ BUY</button>
+                    <button class="btn-primary" onclick="buyProperty('${player}', ${prop.id}, ${prop.price})" style="width: 100%; margin-top: 10px;">🛒 BUY</button>
                 </div>`;
             }
         }
@@ -1506,13 +1507,13 @@ function buyProperty(owner, propId, price) {
 
             savePlayerData();
             localStorage.setItem("cashThrone_players", JSON.stringify(players));
-            alert("âœ… Property purchased!");
+            alert("✅ Property purchased!");
             updatePropertyMarket();
             updateProperties();
             updateGameUI();
         }
     } else {
-        alert("âŒ Not enough money!");
+        alert("❌ Not enough money!");
     }
 }
 
@@ -1526,8 +1527,8 @@ function updateProperties() {
                 <p><strong>${prop.name}</strong> (${prop.type})</p>
                 <p>Value: ${Math.floor(prop.price)} ${gameState.currency}</p>   
                 <p>Daily Income: +${Math.floor(prop.income)} ${gameState.currency}</p>
-                <button class="btn-secondary" onclick="leaseProperty(${prop.id})" style="width: 48%; display: inline-block;">ðŸ“„ LEASE</button>
-                <button class="sell" onclick="removeProperty(${prop.id})" style="width: 48%; display: inline-block; margin-left: 4%;">âŒ DELIST</button>        
+                <button class="btn-secondary" onclick="leaseProperty(${prop.id})" style="width: 48%; display: inline-block;">📄 LEASE</button>
+                <button class="sell" onclick="removeProperty(${prop.id})" style="width: 48%; display: inline-block; margin-left: 4%;">❌ DELIST</button>        
             </div>`;
         }
     }
@@ -1539,7 +1540,7 @@ function leaseProperty(propId) {
     if (prop) {
         prop.forSale = true;
         savePlayerData();
-        alert("âœ… Property listed for sale!");
+        alert("✅ Property listed for sale!");
         updateProperties();
     }
 }
@@ -1553,7 +1554,7 @@ function removeProperty(propId) {
 
 function openChatWith(username) {
     document.getElementById("chatModal").classList.add("active");
-    document.getElementById("chatTitle").textContent = "ðŸ’¬ Chat with " + username;
+    document.getElementById("chatTitle").textContent = "💬 Chat with " + username;
     let messages = gameState.messages[username] || [];
     let html = "";
     for (let msg of messages) {
@@ -1605,12 +1606,12 @@ function updateLeaderboard() {
 
     let html = "";
     for (let i = 0; i < rankings.length && i < 10; i++) {
-        let medal = i === 0 ? "ðŸ¥‡" : i === 1 ? "ðŸ¥ˆ" : i === 2 ? "ðŸ¥‰" : (i + 1);
+        let medal = i === 0 ? "🥇" : i === 1 ? "🥈" : i === 2 ? "🥉" : (i + 1);
         html += `<div class="leaderboard-row">
             <div class="rank">${medal}</div>
             <div class="player-name">${rankings[i].player}</div>
             <div>${rankings[i].country}</div>
-            <div style="color: #ffd700;">ðŸ’° ${Math.floor(rankings[i].worth)}</div>
+            <div style="color: #ffd700;">💰 ${Math.floor(rankings[i].worth)}</div>
         </div>`;
     }
     document.getElementById("leaderboard-list").innerHTML = html;
